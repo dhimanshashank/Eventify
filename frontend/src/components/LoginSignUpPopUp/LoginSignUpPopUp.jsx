@@ -23,7 +23,7 @@ const LoginSignupPopup = ({ setShowLogin, isLogin, setIsLogin }) => {
               <input type="email" placeholder="Email" required />
               <input type="password" placeholder="Password" required />
               <button type="submit" className='login-btn'>Login</button>
-              <button>Login with Google <span><img src="https://cdn-icons-png.flaticon.com/128/300/300221.png" alt="" /></span></button>
+              <button className='google-btn'>Login with Google <span><img src="https://cdn-icons-png.flaticon.com/128/300/300221.png" alt="" /></span></button>
             </form>
             <p>Don't have an account? <span onClick={handleToggleView}>Sign up</span></p>
           </div>
@@ -34,9 +34,10 @@ const LoginSignupPopup = ({ setShowLogin, isLogin, setIsLogin }) => {
               <input type="text" placeholder="Username" required />
               <input type="email" placeholder="Email" required />
               <input type="tel" placeholder="Phone" />
-              <input type="password" placeholder="Password" required />
+              <input type="password" placeholder="Create Password" required />
               <input type="password" placeholder="Confirm Password" required />
               <button type="submit" className='login-btn'>Sign Up</button>
+              <button className='google-btn'>Sign Up with Google <span><img src="https://cdn-icons-png.flaticon.com/128/300/300221.png" alt="" /></span></button>
             </form>
             <p>Already have an account? <span onClick={handleToggleView}>Login</span></p>
           </div>
