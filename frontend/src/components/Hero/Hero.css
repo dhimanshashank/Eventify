@@ -1,0 +1,64 @@
+.hero-title {
+    font-size: 4rem;
+    font-weight: 700;
+    font-family: Cinzel, serif;
+    color: white;
+    letter-spacing: 0.3rem;
+  }
+
+.hero {
+    background-image: url('../../assets/img/Hero1.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    opacity: 0.97;
+  }
+  
+  .hero-content {
+    position: absolute;
+    top: 55%; /* adjust the top position */
+    left: 50%; /* adjust the left position */
+    transform: translate(-50%, -50%); /* center the content */
+  }
+  
+  .hero-content h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 0.3rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.5rem;
+    color: white;
+    margin-top: 20px;
+    font-family: Urbanist, sans-serif;
+    letter-spacing: 0.1rem;
+    line-height: 1.5;
+  }
+  
+  .scroll-button {
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    background: transparent;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.3s ease-in-out;
+    z-index: 2;
+  }
+  
+  .scroll-button svg {
+    width: 50px;
+    height: 40px;
+    border-radius: 100%;
+  }
+  
