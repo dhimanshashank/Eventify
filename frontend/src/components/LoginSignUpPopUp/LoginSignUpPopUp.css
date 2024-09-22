@@ -15,7 +15,7 @@
   .popup-content {
     background: white;
     padding: 2rem;
-    border-radius: 8px;
+    border-radius: 14px;
     width: 100%;
     max-width: 400px;
     position: relative;
@@ -27,7 +27,7 @@
     top: 5%;
     right: 3%;
     border: none;
-    border-radius: 100%;
+    border-radius: 50%;
     background: none;
     cursor: pointer;
     color: black;
@@ -44,16 +44,16 @@
     width: 100%;
     padding: 0.8rem;
     border: none;
-    background-color: #007bff;
+    background-color: black;
     color: white;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
   }
   
   input {
     padding: 0.8rem;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 6px;
     width: 100%;
   }
   
@@ -70,16 +70,37 @@
     color: white;
     transition: all 0.3s ease-in-out;
     font-size: 16px;
+    width: 100%;
+    font-weight: 500;
   }
 
   .login-btn:hover {
-    background-color: rgba(195, 195, 195, 0.833);
+    background-color: rgb(139, 139, 139);
     color: black;
   }
 
   button:hover {
     background-color: black;
     color: white;
+  }
+
+  .google-btn{
+    background-color: #649bf4;
+    color: white;
+    transition: all 0.3s ease-in-out;
+    font-size: 16px;
+    width: 100%;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .google-btn:hover {
+    background-color: rgb(139, 139, 139);
+    color: black;
+    transition: all 0.3s ease-in-out;
   }
 
   p {
