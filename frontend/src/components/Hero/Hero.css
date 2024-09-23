@@ -1,13 +1,11 @@
 .hero-title {
-    font-size: 4rem;
-    font-weight: 700;
     font-family: Cinzel, serif;
     color: white;
     letter-spacing: 0.3rem;
   }
 
 .hero {
-    background-image: url('../../assets/img/Hero1.jpg');
+    background-image: url('../../../public/assets/img/Hero1.jpg');
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -23,7 +21,7 @@
   
   .hero-content {
     position: absolute;
-    top: 55%; /* adjust the top position */
+    top: 45%; /* adjust the top position */
     left: 50%; /* adjust the left position */
     transform: translate(-50%, -50%); /* center the content */
   }
@@ -45,11 +43,10 @@
   }
   
   .scroll-button {
-    border: none;
     cursor: pointer;
     position: absolute;
     background: transparent;
-    bottom: 30px;
+    bottom: 100px;
     left: 50%;
     transform: translateX(-50%);
     transition: all 0.3s ease-in-out;
@@ -60,5 +57,12 @@
     width: 50px;
     height: 40px;
     border-radius: 100%;
+  }
+
+  .scroll-button:hover {
+    transform: translateX(-50%) scale(1.05);
+    transition: all 0.4s ease-in-out;
+    background-color: azure;
+    color: black;
   }
   

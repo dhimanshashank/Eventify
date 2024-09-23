@@ -3,7 +3,7 @@ import './EventButtons.css';
 
 const EventButtons = () => {
   return (
-    <div className="flex justify-center items-center space-x-4 mt-10 mb-16 btn-container">
+    <div className="flex justify-center items-center space-x-4 mb-16 btn-container">
       {/* Wedding Button */}
       <a
         href="/weddings" // Modify with the correct route

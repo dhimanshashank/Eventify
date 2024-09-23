@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import Navbar from './components/Navbar/Navbar';
-import LoginSignupPopup from './components/LoginSignUpPopUp/LoginSignUpPopUp';
-import Home from './pages/Home/Home'
-import Footer from './components/Footer/Footer'
-import './App.css';
+import "./App.css";
+import React, { useState } from "react";
+import Navbar from "./components/Navbar/Navbar";
+import LoginSignupPopup from "./components/LoginSignUpPopUp/LoginSignUpPopUp";
+import Home from "./pages/Home/Home";
+import Footer from "./components/Footer/Footer";
 
 const App = () => {
   const [showLogin, setShowLogin] = useState(false); // Manages showing the login/signup popup
-  const [isLogin, setIsLogin] = useState(true);     // Manages whether we are showing Login or Sign Up
+  const [isLogin, setIsLogin] = useState(true); // Manages whether we are showing Login or Sign Up
 
   return (
     <div className="app">
