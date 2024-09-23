@@ -5,7 +5,7 @@
   }
 
 .hero {
-    background-image: url('../../../public/assets/img/Hero1.jpg');
+    background-image: url('/assets/img/Hero1.jpg');
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;

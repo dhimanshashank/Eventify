@@ -17,8 +17,8 @@ const Events = () => {
       id: 2,
       title: "Event Planning",
       description: "Planning your next big event? We ensure that every detail is handled with precision and care, allowing you to relax and enjoy.",
-      imageSrc: "/assets/img/event_planning.jpg", // Event image
-      backgroundImage: "/assets/img/coperate/bg-event.jpg", // Background image for this event
+      imageSrc: "/assets/img/eventplanning/eventplanning2.jpg", // Event image
+      backgroundImage: "/assets/img/eventplanning/event-bg.jpg", // Background image for this event
       buttonText: "Learn More",
       buttonLink: "/event-planning",
     },
@@ -26,21 +26,27 @@ const Events = () => {
   ];
 
   return (
-    <section className="events-section bg-gray-50 py-20">
-      <div className="container px-4 lg:px-8">
+    <section className="events-section bg-gray-50 py-20 w-full">
+      <div className="w-full px-0">
         {/* Map through the events array */}
         {events.map((event, index) => (
-          <div key={event.id}>
+          <div 
+            key={event.id} 
+            className={`${index % 2 === 0 ? 'bg-white' : 'bg-[#DED2BC]'} py-10`} // Alternating background colors
+            style={{ padding: '0' }} // Remove padding on both sides
+          >
             {/* Event Card */}
             <div
               className={`event-card flex flex-col lg:flex-row items-center justify-between space-y-10 lg:space-y-0 mb-16 ${index % 2 === 0 ? 'lg:flex-row-reverse' : ''}`}
+              style={{ margin: '0 auto', maxWidth: '100%' }} // Ensure full-width
             >
               {/* Image Section */}
               <div className="lg:w-1/2 w-full flex justify-center">
                 <img
                   src={event.imageSrc}
                   alt={event.title}
-                  className="rounded-lg shadow-lg max-w-full h-auto"
+                  className="rounded-lg shadow-lg max-w-full h-auto object-cover"
+                  style={{ maxHeight: '400px' }} // Limit height to avoid overflow
                 />
               </div>
 
@@ -63,10 +69,10 @@ const Events = () => {
               </div>
             </div>
 
-            {/* Background Image Section */}
+            {/* Full-Width Background Image Section */}
             <div
-              className="background-section h-80 w-full bg-fixed bg-cover bg-center mt-20 mb-20"
-              style={{ backgroundImage: `url(${event.backgroundImage})` }}
+              className="background-section h-80 bg-fixed bg-cover bg-center mt-20 mb-0 w-full" // Remove the background color here
+              style={{ backgroundImage: `url(${event.backgroundImage})`, marginBottom: '0', padding: '0' }}
             ></div>
           </div>
         ))}
