@@ -1,6 +1,6 @@
-import React, { useState, useContext } from 'react';
-import './Navbar.css';
-import { StoreContext } from '../../context/StoreContext';
+import React, { useState, useContext } from "react";
+import "./Navbar.css";
+import { StoreContext } from "../../context/StoreContext";
 
 const Navbar = ({ setShowLogin }) => {
   const { token, logout } = useContext(StoreContext);
@@ -16,20 +16,30 @@ const Navbar = ({ setShowLogin }) => {
   };
 
   return (
-    <nav className="navbar">
+    <nav className="navbar sticky ">
       {/* Centered Brand Name */}
       <div className="navbar-left">
-        <h1><a href="#home">EVENTIFY</a></h1>
+        <h1>
+          <a href="#home">EVENTIFY</a>
+        </h1>
         <p>Events and Design</p>
       </div>
 
       {/* Centered Menu Links (hidden on smaller devices) */}
-      <div className={`navbar-center ${menuOpen ? 'open' : ''}`}>
-        <ul className="nav-links">
-          <li><a href="#events">Events</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
+      <div className={`navbar-center  ${menuOpen ? "open" : ""}`}>
+        <ul className="nav-links ">
+          <li>
+            <a href="#events">Events</a>
+          </li>
+          <li>
+            <a href="#services">Services</a>
+          </li>
+          <li>
+            <a href="#about">About</a>
+          </li>
+          <li>
+            <a href="#contact">Contact</a>
+          </li>
           {!token && (
             <li className="login-mobile">
               <button onClick={handleAuthClick} className="login-signup-btn">
@@ -47,13 +57,19 @@ const Navbar = ({ setShowLogin }) => {
             Logout
           </button>
         ) : (
-          <button onClick={handleAuthClick} className="login-signup-btn desktop-login">
+          <button
+            onClick={handleAuthClick}
+            className="login-signup-btn desktop-login"
+          >
             Login
           </button>
         )}
 
         {/* Hamburger menu toggle */}
-        <div className={`hamburger ${menuOpen ? 'open' : ''}`} onClick={handleMenuToggle}>
+        <div
+          className={`hamburger ${menuOpen ? "open" : ""}`}
+          onClick={handleMenuToggle}
+        >
           <span></span>
           <span></span>
           <span></span>

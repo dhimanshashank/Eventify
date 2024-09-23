@@ -1,0 +1,7 @@
+.background-section {
+    height: 350px; /* Adjust height as needed */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-top: 20px;
+  }  

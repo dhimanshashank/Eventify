@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Expletus+Sans:ital,wght@0,400..700;1,400..700&display=swap');
 body{
     margin: 0;
     padding: 0;
-    font-family: 'Urbanist', sans-serif;
     background-color: #f5f5f5;
 }
 
@@ -34,7 +38,7 @@ a.button {
   
   
 .ExpletusSans {
-  font-family: "Expletus Sans", sans-serif;
+  font-family: "Expletus Sans", system-ui;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
@@ -47,3 +51,9 @@ a.button {
   font-style: normal;
 }
 
+.Urbanist {
+  font-family: "Urbanist", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
