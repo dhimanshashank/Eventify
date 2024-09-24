@@ -6,9 +6,9 @@ const Footer = () => {
     <footer className="bg-white" id="contact">
       <div className="container mx-auto px-6 md:px-12 lg:px-20 flex flex-col lg:flex-row justify-between py-14">
         {/* Contact Form Section */}
-        <div className="lg:w-2/5 mb-12 lg:mb-0">
+        <div className="lg:w-2/5 mb-12 lg:mb-0 contact-form">
           <h2 className="text-4xl font-semibold text-gray-900 ExpletusSans">CONTACT US</h2>
-          <p className="text-gray-700 mt-2 mb-6">
+          <p className="text-gray-700 mt-2 mb-6 Urbanist">
             Fill out the form below and we will be in contact shortly.
           </p>
           <form id="contactForm" action="/submit-form" method="POST">
@@ -41,7 +41,10 @@ const Footer = () => {
               required
             ></textarea>
 
-            <button type="submit" className="max-w-sm">
+            <button
+              type="submit"
+              className="w-full p-3 bg-gray-900 text-white rounded-md hover:bg-gray-700 transition-colors duration-300 ExpletusSans"
+            >
               SEND
             </button>
           </form>
@@ -49,7 +52,7 @@ const Footer = () => {
       </div>
 
       {/* Copyright */}
-      <p className="text-white mt-12 text-center bg-black py-4 h-30">
+      <p className="text-white mt-12 text-center bg-black py-4 Urbanist">
         © 2024 Eventify. All rights reserved.
       </p>
     </footer>

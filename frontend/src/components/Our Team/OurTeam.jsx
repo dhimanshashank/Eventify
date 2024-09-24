@@ -34,7 +34,7 @@ const OurTeam = () => {
           {/* About Us Button */}
           <a
             href="/about-us"
-            className="inline-block mt-8 px-8 py-3 text-lg font-bold text-white bg-black hover:bg-gray-800 transition duration-300 Urbanist"
+            className="inline-block mt-8 px-8 py-3 text-lg font-bold text-white bg-black hover:bg-gray-800 transition duration-300 ExpletusSans"
           >
             About Us
           </a>

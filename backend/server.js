@@ -22,10 +22,6 @@ connectDB();
 app.use("/api/users", userRoute);
 // app.use("/api/events", eventRoute);
 
-// routes
-app.use("/api/users", userRoute);
-// app.use("/api/events", eventRoute);
-
 
 app.get("/", (req, res) => {
     res.send("API is running...");

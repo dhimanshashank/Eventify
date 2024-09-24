@@ -16,8 +16,8 @@ const Navbar = ({ setShowLogin }) => {
   };
 
   return (
-    <nav className="navbar sticky ">
-      {/* Centered Brand Name */}
+    <nav className="navbar">
+      {/* Left Side: Brand Name */}
       <div className="navbar-left">
         <h1>
           <a href="#home">EVENTIFY</a>
@@ -26,8 +26,8 @@ const Navbar = ({ setShowLogin }) => {
       </div>
 
       {/* Centered Menu Links (hidden on smaller devices) */}
-      <div className={`navbar-center  ${menuOpen ? "open" : ""}`}>
-        <ul className="nav-links ">
+      <div className={`navbar-center ${menuOpen ? "open" : ""}`}>
+        <ul className="nav-links">
           <li>
             <a href="#events">Events</a>
           </li>
@@ -42,7 +42,7 @@ const Navbar = ({ setShowLogin }) => {
           </li>
           {!token && (
             <li className="login-mobile">
-              <button onClick={handleAuthClick} className="login-signup-btn">
+              <button onClick={handleAuthClick} className="login-signup-btn ExpletusSans">
                 Login
               </button>
             </li>
@@ -50,16 +50,16 @@ const Navbar = ({ setShowLogin }) => {
         </ul>
       </div>
 
-      {/* Right Side (Login/Logout button + Hamburger for medium and small screens) */}
+      {/* Right Side: Login/Logout and Hamburger */}
       <div className="navbar-right">
         {token ? (
-          <button onClick={logout} className="login-signup-btn desktop-login">
+          <button onClick={logout} className="login-signup-btn desktop-login ExpletusSans">
             Logout
           </button>
         ) : (
           <button
             onClick={handleAuthClick}
-            className="login-signup-btn desktop-login"
+            className="login-signup-btn desktop-login ExpletusSans"
           >
             Login
           </button>

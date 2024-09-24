@@ -1,21 +1,15 @@
+/* Footer.css */
 .footer-container {
-  display: flex;
-  justify-content: space-between;
-  padding: 40px;
-  background-color: white;
-  color: black;
-  font-family: 'Arial', sans-serif;
+  /* Removed, as flex properties handled by Tailwind */
 }
 
 .footer-content {
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
+  /* Removed, as flex properties handled by Tailwind */
 }
 
 .contact-form h2, 
 .contact-info blockquote {
-  font-size: 24px;
+  /* Font size managed with Tailwind */
 }
 
 .contact-form p, 
@@ -26,52 +20,39 @@
 
 .contact-form input, 
 .contact-form textarea {
-  width: 60%;
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  font-size: 14px;
-  font-family: inherit;
-}
-
-.contact-form button {
-  padding: 10px 20px;
-  background-color: #333;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-.contact-form button:hover {
-  background-color: #555;
+  /* Width is handled by Tailwind */
+  padding: 10px; /* Retaining custom padding */
+  border: 1px solid #ccc; /* Retained if a specific style is desired */
+  font-size: 14px; /* Retained custom font size */
+  font-family: inherit; /* Retained to maintain consistency */
 }
 
 .contact-info {
-  max-width: 400px;
+  max-width: 400px; /* You may want to use Tailwind for responsiveness */
 }
 
 .social-icons {
-  margin-top: 10px;
+  margin-top: 10px; /* Use Tailwind for spacing */
 }
 
 .social-icons a {
-  margin-right: 10px;
-  color: black;
-  font-size: 20px;
-  text-decoration: none;
+  margin-right: 10px; /* Use Tailwind for spacing */
+  color: black; /* Tailwind for color */
+  font-size: 20px; /* Tailwind handles font size */
+  text-decoration: none; /* Tailwind handles this */
 }
 
 .social-icons a:hover {
-  color: #555;
+  color: #555; /* You can use Tailwind's hover:color-variant */
 }
 
 address {
-  margin-top: 10px;
-  font-style: normal;
+  margin-top: 10px; /* Can use Tailwind */
+  font-style: normal; /* Retained to maintain consistency */
 }
 
 .footer-logo {
-  font-size: 48px;
-  font-weight: bold;
-  margin-top: 20px;
+  font-size: 48px; /* You can use Tailwind for larger headings */
+  font-weight: bold; /* Tailwind handles this */
+  margin-top: 20px; /* Tailwind handles margins */
 }
