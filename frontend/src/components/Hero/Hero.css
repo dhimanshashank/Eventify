@@ -1,68 +1,166 @@
-.hero-title {
-    font-family: Cinzel, serif;
-    color: white;
-    letter-spacing: 0.3rem;
-  }
-
+/* Hero Section */
 .hero {
-    background-image: url('../../../public/assets/img/Hero1.jpg');
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 85vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    position: relative;
-    opacity: 0.97;
-  }
-  
-  .hero-content {
-    position: absolute;
-    top: 45%; /* adjust the top position */
-    left: 50%; /* adjust the left position */
-    transform: translate(-50%, -50%); /* center the content */
-  }
-  
-  .hero-content h1 {
-    font-size: 4rem;
-    font-weight: 700;
-    color: white;
-    letter-spacing: 0.3rem;
-  }
-  
-  .hero-content p {
-    font-size: 1.5rem;
-    color: white;
-    margin-top: 20px;
-    font-family: Urbanist, sans-serif;
-    letter-spacing: 0.1rem;
-    line-height: 1.5;
-  }
-  
-  .scroll-button {
-    cursor: pointer;
-    position: absolute;
-    background: transparent;
-    bottom: 100px;
-    left: 50%;
-    transform: translateX(-50%);
-    transition: all 0.3s ease-in-out;
-    z-index: 2;
-  }
-  
-  .scroll-button svg {
-    width: 50px;
-    height: 40px;
-    border-radius: 100%;
+  background-image: url('/assets/img/Hero1.jpg');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  opacity: 0.97;
+}
+
+/* Dark Overlay */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Hero Content Centered */
+.hero-content {
+  position: absolute;
+  top: 45%; /* adjust the top position */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 1;
+}
+
+/* Hero Title */
+.hero-title {
+  font-family: Cinzel, serif;
+  letter-spacing: 0.3rem;
+  font-size: 4rem;
+  font-weight: 700;
+  color: white;
+}
+
+.hero-content h1 {
+  margin: 0;
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  color: white;
+  margin-top: 20px;
+  font-family: Urbanist, sans-serif;
+  letter-spacing: 0.1rem;
+  line-height: 1.5;
+}
+
+/* Scroll Button */
+.scroll-button {
+  cursor: pointer;
+  background: transparent;
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.3s ease-in-out;
+  z-index: 2;
+}
+
+.scroll-button svg {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.scroll-button:hover {
+  transform: translateX(-50%) scale(1.05);
+  transition: all 0.4s ease-in-out;
+  background-color: azure;
+  color: black;
+}
+
+/* Responsive Design */
+/* For Large Screens */
+@media (min-width: 1024px) {
+  .hero {
+      height: 90vh;
   }
 
-  .scroll-button:hover {
-    transform: translateX(-50%) scale(1.05);
-    transition: all 0.4s ease-in-out;
-    background-color: azure;
-    color: black;
+  .hero-title {
+      font-size: 3.5rem;
   }
-  
+
+  .hero-content p {
+      font-size: 1.4rem;
+  }
+}
+
+/* For Medium Screens */
+@media (max-width: 1023px) {
+  .hero {
+      background-attachment: scroll;
+      height: 70vh;
+  }
+
+  .hero-title {
+      font-size: 3.3rem;
+  }
+
+  .hero-content p {
+      font-size: 1.2rem;
+  }
+
+  .scroll-button {
+      bottom: 40px;
+  }
+}
+
+/* For Small Screens */
+@media (max-width: 768px) {
+  .hero {
+      height: 60vh;
+  }
+
+  .hero-title {
+      font-size: 2.5rem;
+  }
+
+  .hero-content p {
+      font-size: 1rem;
+      margin-top: 15px;
+  }
+
+  .scroll-button svg {
+      width: 35px;
+      height: 35px;
+  }
+}
+
+/* For Extra Small Screens */
+@media (max-width: 480px) {
+  .hero {
+      height: 55vh;
+  }
+
+  .hero-title {
+      font-size: 2rem;
+      letter-spacing: 0.1rem;
+  }
+
+  .hero-content p {
+      font-size: 0.9rem;
+      margin-top: 10px;
+  }
+
+  .scroll-button {
+      bottom: 30px;
+  }
+
+  .scroll-button svg {
+      width: 30px;
+      height: 30px;
+  }
+}

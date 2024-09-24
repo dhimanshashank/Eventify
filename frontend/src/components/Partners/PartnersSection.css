@@ -1,26 +1,24 @@
 #partners {
-    background-color: #f5f5f5;
-    padding: 80px 0;
-    text-align: center;
+    /* The background color is now handled by Tailwind */
+    padding: 80px 0; /* Tailwind handles padding responsively */
+    text-align: center; /* Tailwind handles text centering */
 }
 
 #partners h2 {
-    font-size: 32px;
-    margin-bottom: 40px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #333;
-    font-family: "Cormorant SC", serif;
-    font-weight: 300;
-    font-style: normal;
+    /* Removed font-size as it's handled by Tailwind */
+    margin-bottom: 40px; /* Tailwind handles margins responsively */
+    text-transform: uppercase; /* This is retained */
+    letter-spacing: 2px; /* This is retained */
+    color: #333; /* This is retained */
+    font-family: "Cormorant SC", serif; /* Custom font family retained */
+    font-weight: 300; /* This is retained */
+    font-style: normal; /* This is retained */
 }
 
 #partners h1 {
-    font-size: 48px;
-    line-height: 1.2;
-    margin: 0 0 40px 0;
-    color: #333;
-    padding: 0 20%;
+    /* Removed font-size as it's handled by Tailwind */
+    line-height: 1.2; /* This is retained */
+    margin: 0 0 40px 0; /* Tailwind handles margins responsively */
+    color: #333; /* This is retained */
+    padding: 0 20%; /* Tailwind handles responsive padding */
 }
-
-

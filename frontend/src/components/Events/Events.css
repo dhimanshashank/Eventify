@@ -1,7 +1,42 @@
 .background-section {
-    height: 350px; /* Adjust height as needed */
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    margin-top: 20px;
-  }  
+  width: 99vw;
+  height: 400px; /* Adjust height as needed */
+  background-size: cover; /* Ensure the image covers the entire section */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Prevent image repeat */
+  background-attachment: fixed; /* Make the background image fixed during scroll */
+  margin-left: calc(-50vw + 50%); /* Ensure the background extends beyond the container */
+}
+
+.event-card {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8); /* Optional: Add slight transparency to content area */
+}
+
+.text-section {
+  padding: 20px;
+}
+
+.event-image {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.learn-more-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: #000;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.learn-more-btn:hover {
+  background-color: #333;
+}
