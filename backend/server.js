@@ -31,5 +31,3 @@ app.get("/", (req, res) => {
 app.listen(port, () => {
     console.log(`Server is listening on port ${port}`);
 })
-
-//mongodb+srv://shashdhiman:aman418shashank@cluster0.vheu1.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
