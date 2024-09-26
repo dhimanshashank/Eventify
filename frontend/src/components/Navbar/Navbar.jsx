@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 import { StoreContext } from "../../context/StoreContext";
 
@@ -12,33 +13,31 @@ const Navbar = ({ setShowLogin }) => {
 
   const handleAuthClick = () => {
     setShowLogin(true);
-    setMenuOpen(false); // Close the menu once login is clicked
+    setMenuOpen(false);
   };
 
   return (
     <nav className="navbar">
-      {/* Left Side: Brand Name */}
       <div className="navbar-left">
         <h1>
-          <a href="#home">EVENTIFY</a>
+          <Link to="/">EVENTIFY</Link>
         </h1>
         <p>Events and Design</p>
       </div>
 
-      {/* Centered Menu Links (hidden on smaller devices) */}
       <div className={`navbar-center ${menuOpen ? "open" : ""}`}>
         <ul className="nav-links">
           <li>
-            <a href="#events">Events</a>
+            <Link to="/events" onClick={() => setMenuOpen(false)}>Events</Link>
           </li>
           <li>
-            <a href="#services">Services</a>
+            <Link to="/services" onClick={() => setMenuOpen(false)}>Services</Link>
           </li>
           <li>
-            <a href="#about">About</a>
+            <Link to="/about" onClick={() => setMenuOpen(false)}>About</Link>
           </li>
           <li>
-            <a href="#contact">Contact</a>
+            <Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link>
           </li>
           {!token && (
             <li className="login-mobile">
@@ -50,7 +49,6 @@ const Navbar = ({ setShowLogin }) => {
         </ul>
       </div>
 
-      {/* Right Side: Login/Logout and Hamburger */}
       <div className="navbar-right">
         {token ? (
           <button onClick={logout} className="login-signup-btn desktop-login ExpletusSans">
@@ -65,7 +63,6 @@ const Navbar = ({ setShowLogin }) => {
           </button>
         )}
 
-        {/* Hamburger menu toggle */}
         <div
           className={`hamburger ${menuOpen ? "open" : ""}`}
           onClick={handleMenuToggle}
