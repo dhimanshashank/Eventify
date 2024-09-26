@@ -1,4 +1,5 @@
 import React from 'react';
+import OurTeam from '../components/Our Team/OurTeam';
 
 const AboutUs = () => {
   return (
@@ -29,6 +30,9 @@ const AboutUs = () => {
           good company.
         </p>
       </div>
+
+      {/* Team Section */}
+      <OurTeam />
     </div>
   );
 };

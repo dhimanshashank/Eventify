@@ -1,46 +1,42 @@
 import React from 'react';
-import './OurTeam.css'; // Custom CSS for additional styling
+
+const teamMembers = [
+  {
+    name: "Shashank Dhiman",
+    title: "Owner & Creative Director",
+    imageUrl: "/assets/img/aboutus/shashank.jpg",
+    description: `A seasoned and standout event professional in the northern California wedding industry...`,
+  },
+  // Add more members as needed
+];
 
 const OurTeam = () => {
   return (
-    <section className="our-team-section bg-gray-50 py-20" id="about">
-      <div className="container mx-auto px-4 lg:px-8 flex flex-col lg:flex-row items-center justify-between space-y-10 lg:space-y-0">
-        {/* Image Section */}
-        <div className="lg:w-1/2 w-full flex justify-center">
-          <img
-            // src={require("../path_to_image_directory/image.png")} // replace with the actual image path
-            alt="Our Team"
-            className="rounded-lg shadow-lg max-w-full h-auto"
-          />
-        </div>
+    <div className="w-full bg-gray-100 py-16">
+      <h2 className="text-center text-4xl font-bold mb-12">Meet Your Team</h2>
 
-        {/* Text Section */}
-        <div className="lg:w-1/2 w-full text-center lg:text-left mt-10 lg:mt-0 lg:pl-10 px-4">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-gray-800 ExpletusSans">
-            Our Team
-          </h2>
-          <p className="text-gray-600 mb-6 leading-relaxed Urbanist">
-            "It’s hard to put into words how incredible the Eventify team is. I left my wedding weekend feeling like they were part of my family. My family would agree. The team allowed me the greatest gift, to not stress throughout the entirety of the weekend."
-          </p>
-          <p className="text-gray-600 leading-relaxed Urbanist">
-            I was able to embrace spending time with, and most importantly, party with friends and family. I cannot thank them enough.
-          </p>
+      <div className="max-w-7xl mx-auto px-6">
+        {teamMembers.map((member, index) => (
+          <div key={index} className="flex flex-col lg:flex-row items-center lg:items-start lg:justify-between w-full mb-12 border-b border-gray-300 pb-8 px-4 lg:px-8">
+            {/* Image Section */}
+            <div className="w-full lg:w-1/3 mb-6 lg:mb-0">
+              <img 
+                src={member.imageUrl} 
+                alt={member.name} 
+                className="max-h-60 w-auto mx-auto object-cover rounded-lg shadow-lg"
+              />
+            </div>
 
-          {/* Testimonial Source */}
-          <p className="mt-6 text-gray-800 italic Urbanist">
-            Kara Mitchelle, 2023 Bride
-          </p>
-
-          {/* About Us Button */}
-          <a
-            href="/about-us"
-            className="inline-block mt-8 px-8 py-3 text-lg font-bold text-white bg-black hover:bg-gray-800 transition duration-300 ExpletusSans"
-          >
-            About Us
-          </a>
-        </div>
+            {/* Text Section */}
+            <div className="w-full lg:w-2/3 text-center lg:text-left">
+              <h3 className="text-2xl font-semibold mb-2">{member.name}</h3>
+              <p className="text-xl text-gray-600 mb-4">{member.title}</p>
+              <p className="text-lg text-gray-500 leading-relaxed">{member.description}</p>
+            </div>
+          </div>
+        ))}
       </div>
-    </section>
+    </div>
   );
 };
 
