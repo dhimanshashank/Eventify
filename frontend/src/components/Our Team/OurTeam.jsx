@@ -28,7 +28,7 @@ const OurTeam = () => {
 
           {/* Testimonial Source */}
           <p className="mt-6 text-gray-800 italic Urbanist">
-            Kara Mitchelle, 2023 Bride
+            - Kevin
           </p>
 
           {/* About Us Button */}
