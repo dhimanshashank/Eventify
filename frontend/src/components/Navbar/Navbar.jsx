@@ -4,7 +4,7 @@ import "./Navbar.css";
 import { StoreContext } from "../../context/StoreContext";
 
 const Navbar = ({ setShowLogin }) => {
-  const { token, logout } = useContext(StoreContext);
+  const { token, logout } = useContext(StoreContext); // Assuming StoreContext manages token
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleMenuToggle = () => {
@@ -28,20 +28,31 @@ const Navbar = ({ setShowLogin }) => {
       <div className={`navbar-center ${menuOpen ? "open" : ""}`}>
         <ul className="nav-links">
           <li>
-            <Link to="/events" onClick={() => setMenuOpen(false)}>Events</Link>
+            <Link to="/events" onClick={() => setMenuOpen(false)}>
+              Events
+            </Link>
           </li>
           <li>
-            <Link to="/services" onClick={() => setMenuOpen(false)}>Services</Link>
+            <Link to="/services" onClick={() => setMenuOpen(false)}>
+              Services
+            </Link>
           </li>
           <li>
-            <Link to="/about" onClick={() => setMenuOpen(false)}>About</Link>
+            <Link to="/about" onClick={() => setMenuOpen(false)}>
+              About
+            </Link>
           </li>
           <li>
-            <Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link>
+            <Link to="/contact" onClick={() => setMenuOpen(false)}>
+              Contact
+            </Link>
           </li>
           {!token && (
             <li className="login-mobile">
-              <button onClick={handleAuthClick} className="login-signup-btn ExpletusSans">
+              <button
+                onClick={handleAuthClick}
+                className="login-signup-btn Cinzel"
+              >
                 Login
               </button>
             </li>
@@ -51,13 +62,16 @@ const Navbar = ({ setShowLogin }) => {
 
       <div className="navbar-right">
         {token ? (
-          <button onClick={logout} className="login-signup-btn desktop-login ExpletusSans">
+          <button
+            onClick={logout}
+            className="login-signup-btn desktop-login Cinzel"
+          >
             Logout
           </button>
         ) : (
           <button
             onClick={handleAuthClick}
-            className="login-signup-btn desktop-login ExpletusSans"
+            className="login-signup-btn desktop-login Cinzel"
           >
             Login
           </button>
@@ -67,7 +81,7 @@ const Navbar = ({ setShowLogin }) => {
           className={`hamburger ${menuOpen ? "open" : ""}`}
           onClick={handleMenuToggle}
         >
-          <span></span>
+          <span>Events</span>
           <span></span>
           <span></span>
         </div>

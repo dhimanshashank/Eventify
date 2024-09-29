@@ -9,7 +9,7 @@ const Hero = () => {
 
   return (
     <section className="relative w-full bg-cover bg-center" >
-      <div className="absolute inset-0 bg-black bg-opacity-50 hero"></div> {/* Dark overlay */}
+      <div className="absolute inset-0 hero"></div> {/* Dark overlay */}
       <div className="relative z-11 flex flex-col items-center justify-center h-full text-center text-white hero-content">
         <h1 className="text-6xl font-extrabold tracking-wide leading-tight hero-title">CELEBRATE IN STYLE</h1>
         <p className="mt-4 text-lg font-medium Cinzel">Elegant, Unforgettable Events Tailored to Your Vision</p>

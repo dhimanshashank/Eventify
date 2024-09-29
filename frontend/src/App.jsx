@@ -1,8 +1,9 @@
+import { GoogleOAuthProvider } from '@react-oauth/google';
 import "./App.css";
 import React, { useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
-import LoginSignupPopup from "./components/LoginSignUpPopUp/LoginSignUpPopUp";
+import LoginSignupPopup from "./components/LoginSignUpPopUp/LoginSignupPopup";
 import Home from "./pages/Home";
 import Footer from "./components/Footer/Footer";
 import Events from "./pages/Events";
@@ -15,26 +16,28 @@ const App = () => {
   const location = useLocation();
 
   return (
-    <div className="app">
-      <Navbar setShowLogin={setShowLogin} />
+    <GoogleOAuthProvider clientId={import.meta.env.VITE_REACT_APP_GOOGLE_CLIENT_ID}>
+      <div className="app">
+        <Navbar setShowLogin={setShowLogin} />
 
-      {showLogin && (
-        <LoginSignupPopup
-          setShowLogin={setShowLogin}
-          isLogin={isLogin}
-          setIsLogin={setIsLogin}
-        />
-      )}
+        {showLogin && (
+          <LoginSignupPopup
+            setShowLogin={setShowLogin}
+            isLogin={isLogin}
+            setIsLogin={setIsLogin}
+          />
+        )}
 
-      <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<Home />} />
-        <Route path="/events" element={<Events />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/about" element={<About />} />
-      </Routes>
+        <Routes location={location} key={location.pathname}>
+          <Route path="/" element={<Home />} />
+          <Route path="/events" element={<Events />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </GoogleOAuthProvider>
   );
 };
 
