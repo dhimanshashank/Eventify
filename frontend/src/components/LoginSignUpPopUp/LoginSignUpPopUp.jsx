@@ -147,10 +147,10 @@ const LoginSignupPopup = ({ setShowLogin, isLogin, setIsLogin }) => {
   };
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50 z-50">
-      <div className="popup-content relative bg-white rounded-lg shadow-lg p-8 w-96">
+    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+      <div className="popup-content relative bg-white rounded-xl shadow-lg p-8 w-96 mt-10">
         <button
-          className="close-btn absolute top-4 right-4 text-gray-500 hover:text-gray-700"
+          className="close-btn absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition duration-300 pr-2"
           onClick={handleClose}
         >
           X
@@ -166,7 +166,7 @@ const LoginSignupPopup = ({ setShowLogin, isLogin, setIsLogin }) => {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Email"
                 required
-                className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black Urbanist"
               />
               <input
                 type="password"
@@ -174,7 +174,7 @@ const LoginSignupPopup = ({ setShowLogin, isLogin, setIsLogin }) => {
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Password"
                 required
-                className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black Urbanist"
               />
               {error && <p className="text-red-500">{error}</p>}
               <button
@@ -185,7 +185,7 @@ const LoginSignupPopup = ({ setShowLogin, isLogin, setIsLogin }) => {
               </button>
             </form>
 
-            <div className="mt-4 Urbanist">
+            {/* <div className="mt-4 Urbanist">
               <GoogleLogin
                 onSuccess={handleGoogleLoginSuccess}
                 onError={handleGoogleLoginFailure}
@@ -193,7 +193,7 @@ const LoginSignupPopup = ({ setShowLogin, isLogin, setIsLogin }) => {
                 theme="outline"
                 size="large"
               />
-            </div>
+            </div> */}
 
             <p className="text-center mt-6 text-gray-500 Urbanist">
               Don't have an account?{" "}
@@ -207,7 +207,7 @@ const LoginSignupPopup = ({ setShowLogin, isLogin, setIsLogin }) => {
           </div>
         ) : (
           <div className="signup-form">
-            <h2 className="font-bold text-3xl text-center mb-6">Sign Up</h2>
+            <h2 className="font-bold text-3xl text-center mb-6 Cinzel">Sign Up</h2>
             <form className="space-y-4" onSubmit={handleSignupBtn}>
               <input
                 type="text"
@@ -215,7 +215,7 @@ const LoginSignupPopup = ({ setShowLogin, isLogin, setIsLogin }) => {
                 onChange={(e) => setUsername(e.target.value)}
                 placeholder="Username"
                 required
-                className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black Urbanist"
               />
               <input
                 type="email"
@@ -223,7 +223,7 @@ const LoginSignupPopup = ({ setShowLogin, isLogin, setIsLogin }) => {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Email"
                 required
-                className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black Urbanist"
               />
               <input
                 type="password"
@@ -231,7 +231,7 @@ const LoginSignupPopup = ({ setShowLogin, isLogin, setIsLogin }) => {
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Password"
                 required
-                className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black Urbanist"
               />
               <input
                 type="tel"
@@ -239,22 +239,22 @@ const LoginSignupPopup = ({ setShowLogin, isLogin, setIsLogin }) => {
                 onChange={(e) => setPhoneNumber(e.target.value)}
                 placeholder="Phone Number"
                 required
-                className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black Urbanist"
               />
               {error && <p className="text-red-500">{error}</p>}
               <button
                 type="submit"
-                className="w-full p-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition duration-200 font-bold text-xl"
+                className="w-full p-2 bg-black text-white rounded-lg hover:bg-gray-800 transition duration-200 font-bold text-xl Cinzel"
               >
                 Sign Up
               </button>
             </form>
 
-            <p className="text-center mt-6">
+            <p className="text-center mt-6 text-gray-500 Urbanist">
               Already have an account?{" "}
               <span
                 onClick={handleToggleView}
-                className="text-blue-500 cursor-pointer underline hover:text-blue-700"
+                className="text-blue-500 cursor-pointer underline hover:text-blue-700 Urbanist"
               >
                 Login
               </span>
