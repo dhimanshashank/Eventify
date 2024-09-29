@@ -20,7 +20,7 @@ const OurTeam = () => {
             Our Team
           </h2>
           <p className="text-gray-600 mb-6 leading-relaxed Urbanist">
-            "It’s hard to put into words how incredible the Eventify team is. I left my wedding weekend feeling like they were part of my family. My family would agree. The team allowed me the greatest gift, to not stress throughout the entirety of the weekend."
+            "It’s hard to put into words how incredible the Eventify team is. I left my birthday weekend feeling like they were part of my family. My family would agree. The team allowed me the greatest gift, to not stress throughout the entirety of the weekend."
           </p>
           <p className="text-gray-600 leading-relaxed Urbanist">
             I was able to embrace spending time with, and most importantly, party with friends and family. I cannot thank them enough.
@@ -28,7 +28,7 @@ const OurTeam = () => {
 
           {/* Testimonial Source */}
           <p className="mt-6 text-gray-800 italic Urbanist">
-            - Kevin
+            ~ Vanshika Sharma
           </p>
 
           {/* About Us Button */}

@@ -83,7 +83,7 @@ const LoginPopUp = ({ setShowLogin }) => {
             By continuing, I agree to the Terms of Service and Privacy Policy.
           </p>
         </div>
-        {currState === "Login" ? (
+        {currState === "Logidn" ? (
           <p>
             Create a new account?{" "}
             <span onClick={() => setCurrState("Sign Up")}>Click here</span>

@@ -18,7 +18,7 @@ const Login = () => {
         <div className="login-prompt">
           <h2>Please Sign In</h2>
           <SignInButton>
-            <button className="sign-in-btn">Sign In</button>
+            <button  className="sign-in-btn">Sign In</button>
           </SignInButton>
         </div>
       </SignedOut>
