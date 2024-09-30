@@ -1,4 +1,5 @@
 import { GoogleOAuthProvider } from '@react-oauth/google';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 import "./App.css";
 import React, { useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
@@ -17,7 +18,7 @@ const App = () => {
 
   return (
     <GoogleOAuthProvider clientId={import.meta.env.VITE_REACT_APP_GOOGLE_CLIENT_ID}>
-      <div className="app">
+      <div className="app relative">
         <Navbar setShowLogin={setShowLogin} />
 
         {showLogin && (
@@ -36,6 +37,16 @@ const App = () => {
         </Routes>
 
         <Footer />
+
+        {/* WhatsApp Button */}
+        <a
+          href="https://wa.me/8847680989"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="fixed bottom-10 right-12 bg-green-500 text-white rounded-full w-16 h-16 flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300"
+        >
+          <i className="fab fa-whatsapp text-5xl"></i>
+        </a>
       </div>
     </GoogleOAuthProvider>
   );

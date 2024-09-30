@@ -1,10 +1,10 @@
 import React from "react";
-// import "./Footer.css";
 
 const Footer = () => {
   return (
-    <footer className="bg-white" id="contact">
+    <footer className="bg-white pt-5 pb-0" id="contact">
       <div className="container mx-auto px-6 md:px-12 lg:px-20 flex flex-col lg:flex-row justify-between py-14">
+        
         {/* Contact Form Section */}
         <div className="lg:w-2/5 mb-12 lg:mb-0 contact-form">
           <h2 className="text-4xl font-semibold text-gray-900 ExpletusSans">CONTACT US</h2>
@@ -43,17 +43,47 @@ const Footer = () => {
 
             <button
               type="submit"
-              className="w-full p-3 bg-gray-900 text-white rounded-md hover:bg-gray-700 transition-colors duration-300 ExpletusSans"
+              className="w-full p-3 bg-black text-white rounded-md hover:bg-gray-800 transition-colors duration-300 ExpletusSans"
             >
               SEND
             </button>
           </form>
         </div>
+
+        {/* Logo and Social Links Section */}
+        <div className="lg:w-2/5 flex flex-col items-center lg:items-start">
+          {/* Logo */}
+          <img
+            src="/assets/favicon.jpg"  
+            alt="Eventify Logo"
+            className="w-24 h-24 rounded-full mb-6 mt-8 lg:mt-0 md:w-32 md:h-32 lg:w-48 lg:h-48"
+          />
+          
+          {/* Address and Social Links */}
+          <address className="text-gray-700 not-italic mb-6 text-center lg:text-left">
+            <p className="Urbanist mb-2">123 Event Street, Ludhiana, Punjab</p>
+            <p className="Urbanist mb-2">Phone: +91 88476 80989</p>
+            <p className="Urbanist">Email: youreventify@google.com</p>
+          </address>
+          
+          {/* Social Icons */}
+          <div className="social-icons flex space-x-4 mt-6">
+            <a href="https://facebook.com" target="_blank" rel="noreferrer">
+              <i className="fab fa-facebook-f text-gray-900 text-3xl hover:transform hover:scale-105 transition duration-300 hover:text-blue-500"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noreferrer">
+              <i className="fab fa-instagram text-gray-900 text-3xl hover:transform hover:scale-105 transition duration-300 hover:text-pink-500"></i>
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noreferrer">
+              <i className="fab fa-twitter text-gray-900 text-3xl hover:transform hover:scale-105 transition duration-300 hover:text-blue-400"></i>
+            </a>
+          </div>
+        </div>
       </div>
 
       {/* Copyright */}
       <p className="text-white mt-12 text-center bg-black py-4 Urbanist">
-        © 2024 Eventify. All rights reserved.
+        © 2024 Eventify. All rights reserved. | Terms of Service
       </p>
     </footer>
   );
