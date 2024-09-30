@@ -1,5 +1,5 @@
-import React from 'react';
-import './Events.css';
+import React from "react";
+import "./Events.css";
 
 const Events = () => {
   // Array of event data with corresponding background images
@@ -7,7 +7,8 @@ const Events = () => {
     {
       id: 1,
       title: "Corporate Events",
-      description: "We know how to make your event feel intentional, intimate, and engaging. Whether it’s an event for 10 or 500, we bring gracious hosting and thoughtful design to meet in one immersive and unforgettable experience.",
+      description:
+        "We know how to make your event feel intentional, intimate, and engaging. Whether it’s an event for 10 or 500, we bring gracious hosting and thoughtful design to meet in one immersive and unforgettable experience.",
       imageSrc: "/assets/img/coperate/coperate1.jpg",
       backgroundImage: "/assets/img/coperate/coperate-bg.jpg",
       buttonText: "Learn More",
@@ -16,7 +17,8 @@ const Events = () => {
     {
       id: 2,
       title: "Event Planning",
-      description: "Planning your next big event? We ensure that every detail is handled with precision and care, allowing you to relax and enjoy.",
+      description:
+        "Planning your next big event? We ensure that every detail is handled with precision and care, allowing you to relax and enjoy.",
       imageSrc: "/assets/img/eventplanning/eventplanning.jpg",
       backgroundImage: "/assets/img/eventplanning/event-bg.jpg",
       buttonText: "Learn More",
@@ -29,12 +31,16 @@ const Events = () => {
     <section className="events-section bg-gray-50 py-20 w-full ">
       <div className="w-full px-0">
         {events.map((event, index) => (
-          <div 
-            key={event.id} 
-            className={`event-card ${index % 2 === 0 ? 'bg-white' : 'bg-[#DED2BC]'} py-10 `}
+          <div
+            key={event.id}
+            className={`event-card ${
+              index % 2 === 0 ? "bg-white" : "bg-[#DED2BC]"
+            } py-10 `}
           >
             <div
-              className={`flex flex-col lg:flex-row items-center justify-between space-y-10 lg:space-y-0 mb-16 px-8 lg:px-0 py-16 lg:py-0 ${index % 2 === 0 ? 'lg:flex-row-reverse' : ''}`}
+              className={`flex flex-col lg:flex-row items-center justify-between space-y-10 lg:space-y-0 mb-16 px-8 lg:px-0 py-16 lg:py-0 ${
+                index % 2 === 0 ? "lg:flex-row-reverse" : ""
+              }`}
             >
               {/* Image Section */}
               <div className="lg:w-1/2 w-full flex justify-center">
@@ -42,6 +48,8 @@ const Events = () => {
                   src={event.imageSrc}
                   alt={event.title}
                   className="rounded-lg shadow-lg event-image"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
 

@@ -6,16 +6,16 @@ const EventButtons = () => {
     <div className="flex justify-center items-center space-x-4 mb-16 btn-container">
       {/* Wedding Button */}
       <a
-        href="/weddings" // Modify with the correct route
-        className="px-3 py-3 text-sm font-semibold border border-gray-400 rounded-full hover:bg-gray-900 hover:text-white transition duration-300 event-buttons"
+        href="/events" // Modify with the correct route
+        className="px-3 py-3 text-lg font-semibold border border-gray-400 rounded-full hover:bg-gray-900 hover:text-white transition duration-300 event-buttons Urbanist"
       >
-        Weddings
+        Event Planning
       </a>
 
       {/* Corporate Events Button */}
       <a
-        href="/corporate-events" // Modify with the correct route
-        className="px-8 py-3 text-sm font-semibold border border-gray-400 rounded-full hover:bg-gray-900 hover:text-white transition duration-300 event-buttons"
+        href="/events" // Modify with the correct route
+        className="px-8 py-3 text-lg font-semibold border border-gray-400 rounded-full hover:bg-gray-900 hover:text-white transition duration-300 event-buttons Urbanist"
       >
         Corporate Events
       </a>
