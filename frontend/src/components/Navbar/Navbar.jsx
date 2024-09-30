@@ -1,10 +1,10 @@
 import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
-import { StoreContext } from "../../context/StoreContext";  // Assuming you manage token and user in StoreContext
+import { StoreContext } from "../../context/StoreContext";
 
-const Navbar = ({ setShowLogin, user, setUser }) => {
-  const { token, logout } = useContext(StoreContext);  // Assuming StoreContext manages token
+const Navbar = ({ setShowLogin }) => {
+  const { token, logout } = useContext(StoreContext); // Assuming StoreContext manages token
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleMenuToggle = () => {
@@ -13,12 +13,6 @@ const Navbar = ({ setShowLogin, user, setUser }) => {
 
   const handleAuthClick = () => {
     setShowLogin(true);
-    setMenuOpen(false);
-  };
-
-  const handleLogout = () => {
-    logout();
-    setUser(null);  // Clear user on logout
     setMenuOpen(false);
   };
 
@@ -53,7 +47,7 @@ const Navbar = ({ setShowLogin, user, setUser }) => {
               Contact
             </Link>
           </li>
-          {!user && (
+          {!token && (
             <li className="login-mobile">
               <button
                 onClick={handleAuthClick}
@@ -67,18 +61,13 @@ const Navbar = ({ setShowLogin, user, setUser }) => {
       </div>
 
       <div className="navbar-right">
-        {user ? (
-          <>
-            <div className="user-info">
-              <span className="username">{user.name}</span>
-              <button
-                onClick={handleLogout}
-                className="login-signup-btn desktop-login Cinzel"
-              >
-                Logout
-              </button>
-            </div>
-          </>
+        {token ? (
+          <button
+            onClick={logout}
+            className="login-signup-btn desktop-login Cinzel"
+          >
+            Logout
+          </button>
         ) : (
           <button
             onClick={handleAuthClick}

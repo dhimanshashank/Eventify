@@ -48,13 +48,13 @@ const EventCategories = () => {
     },
     {
       id: 2,
-      image: '/assets/img/past-events/anniversary.jpg',
-      title: 'John & Jane’s 25th Anniversary',
+      image: '/assets/img/past events/anamikaAmanAnniversary.jpg',
+      title: 'Anamika & Aman’s 25th Anniversary',
       description: 'A silver anniversary celebration with family and friends.',
     },
     {
       id: 3,
-      image: '/assets/img/past-events/reunion.jpg',
+      image: '/assets/img/past events/collegeReunion.jpg',
       title: 'Class of 2010 Reunion',
       description: 'A school reunion filled with laughter, memories, and fun activities.',
     },
