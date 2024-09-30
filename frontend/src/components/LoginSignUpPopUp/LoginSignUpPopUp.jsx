@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { GoogleLogin } from "@react-oauth/google";
+import { toast } from "react-toastify";  // Import toast for notifications
 
 const LoginSignupPopup = ({ setShowLogin, isLogin, setIsLogin }) => {
   const [email, setEmail] = useState("");
@@ -37,14 +38,16 @@ const LoginSignupPopup = ({ setShowLogin, isLogin, setIsLogin }) => {
       const data = await response.json();
 
       if (response.ok) {
-        alert("Login successful!");
+        toast.success("Login successful!");  // Show success toast
         setShowLogin(false); // Close popup on success
       } else {
         setError(data.message || "Login failed");
+        toast.error(data.message || "Login failed");  // Show error toast
       }
     } catch (error) {
       console.log("Login error:", error);
       setError("Login failed!");
+      toast.error("Login failed!");  // Show error toast
     }
   };
 
@@ -63,43 +66,50 @@ const LoginSignupPopup = ({ setShowLogin, isLogin, setIsLogin }) => {
       });
       const data = await res.json();
       if (res.ok) {
-        alert("Google login successful!");
+        toast.success("Google login successful!");  // Show success toast
         setShowLogin(false);
       } else {
         setError(data.message || "Google login failed");
+        toast.error(data.message || "Google login failed");  // Show error toast
       }
     } catch (error) {
       console.log("Google login error:", error);
       setError("Google login failed!");
+      toast.error("Google login failed!");  // Show error toast
     }
   };
 
   const handleGoogleLoginFailure = (error) => {
     console.log("Google login failure:", error);
     setError("Google login failed!");
+    toast.error("Google login failed!");  // Show error toast
   };
 
   const handleSignupBtn = async (e) => {
     e.preventDefault(); // Prevent default form submission
-    setError('');
+    setError("");
 
     if (!username || !email || !password || !phoneNumber) { // Update this line
-      setError('Please fill in all fields');
+      setError("Please fill in all fields");
+      toast.error("Please fill in all fields");  // Show error toast
       return;
     }
 
     if (!isValidEmail(email)) {
-      setError('Please enter a valid email address');
+      setError("Please enter a valid email address");
+      toast.error("Please enter a valid email address");  // Show error toast
       return;
     }
 
     if (password.length < 8) {
-      setError('Password must be at least 8 characters long');
+      setError("Password must be at least 8 characters long");
+      toast.error("Password must be at least 8 characters long");  // Show error toast
       return;
     }
 
     if (!isValidPhoneNumber(phoneNumber)) { // Add this block
-      setError('Please enter a valid phone number');
+      setError("Please enter a valid phone number");
+      toast.error("Please enter a valid phone number");  // Show error toast
       return;
     }
 
@@ -114,21 +124,23 @@ const LoginSignupPopup = ({ setShowLogin, isLogin, setIsLogin }) => {
           name: username,
           email,
           password,
-          phone:phoneNumber, // Add this line
+          phone: phoneNumber, // Add this line
         }),
       });
 
       const data = await response.json();
 
       if (response.ok) {
-        alert("Signup successful!");
+        toast.success("Signup successful!");  // Show success toast
         setShowLogin(false); // Close popup on success
       } else {
         setError(data.message || "Signup failed");
+        toast.error(data.message || "Signup failed");  // Show error toast
       }
     } catch (error) {
       console.log("Signup error:", error);
       setError("An error occurred during signup");
+      toast.error("An error occurred during signup");  // Show error toast
     }
   };
 
@@ -184,16 +196,6 @@ const LoginSignupPopup = ({ setShowLogin, isLogin, setIsLogin }) => {
                 Login
               </button>
             </form>
-
-            {/* <div className="mt-4 Urbanist">
-              <GoogleLogin
-                onSuccess={handleGoogleLoginSuccess}
-                onError={handleGoogleLoginFailure}
-                buttonText="Login with Google"
-                theme="outline"
-                size="large"
-              />
-            </div> */}
 
             <p className="text-center mt-6 text-gray-500 Urbanist">
               Don't have an account?{" "}

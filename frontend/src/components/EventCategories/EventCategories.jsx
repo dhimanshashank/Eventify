@@ -42,8 +42,8 @@ const EventCategories = () => {
   const previousEvents = [
     {
       id: 1,
-      image: '/assets/img/past-events/birthday.jpg',
-      title: 'Emily’s 21st Birthday',
+      image: '/assets/img/past events/radhikaBirthday.jpg',
+      title: 'Radhika’s 35th Birthday',
       description: 'A vibrant birthday bash with a tropical theme and live music.',
     },
     {
@@ -67,7 +67,7 @@ const EventCategories = () => {
       </h2>
 
       {/* Event Categories Section */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 cursor-pointer">
         {eventCategories.map((event) => (
           <div
             key={event.id}
@@ -91,7 +91,7 @@ const EventCategories = () => {
         Previous Events
       </h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 cursor-pointer">
         {previousEvents.map((event) => (
           <div
             key={event.id}
@@ -102,7 +102,7 @@ const EventCategories = () => {
               alt={event.title}
               className="w-full h-48 object-cover"
             />
-            <div className="p-4">
+            <div className="p-4 ">
               <h3 className="text-2xl font-bold mb-2 Cinzel">{event.title}</h3>
               <p className="text-gray-600 Urbanist">{event.description}</p>
             </div>

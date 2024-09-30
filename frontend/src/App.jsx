@@ -10,25 +10,32 @@ import Footer from "./components/Footer/Footer";
 import Events from "./pages/Events";
 import Services from "./pages/Services";
 import About from "./pages/AboutUs";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
   const [showLogin, setShowLogin] = useState(false);
   const [isLogin, setIsLogin] = useState(true);
+  const [user, setUser] = useState(null);  // New state to track logged-in user
   const location = useLocation();
 
   return (
     <GoogleOAuthProvider clientId={import.meta.env.VITE_REACT_APP_GOOGLE_CLIENT_ID}>
       <div className="app relative">
-        <Navbar setShowLogin={setShowLogin} />
+        {/* Navbar */}
+        <Navbar setShowLogin={setShowLogin} user={user} setUser={setUser} />  {/* Passing user and setUser */}
 
+        {/* Login/Signup Popup */}
         {showLogin && (
           <LoginSignupPopup
             setShowLogin={setShowLogin}
             isLogin={isLogin}
             setIsLogin={setIsLogin}
+            setUser={setUser}  // Pass setUser to LoginSignupPopup
           />
         )}
 
+        {/* Main Routes */}
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home />} />
           <Route path="/events" element={<Events />} />
@@ -36,6 +43,7 @@ const App = () => {
           <Route path="/about" element={<About />} />
         </Routes>
 
+        {/* Footer */}
         <Footer />
 
         {/* WhatsApp Button */}
@@ -47,6 +55,9 @@ const App = () => {
         >
           <i className="fab fa-whatsapp text-5xl"></i>
         </a>
+
+        {/* ToastContainer for notifications */}
+        <ToastContainer position="top-right" autoClose={3500} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover />
       </div>
     </GoogleOAuthProvider>
   );
