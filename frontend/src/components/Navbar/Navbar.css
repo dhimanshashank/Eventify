@@ -191,3 +191,20 @@
       display: none;
     }
   }
+
+  .nav-links li.active a {
+    font-weight: bold; /* Make the text bold */
+    color: #ff6347; /* Highlight color */
+    border-bottom: 2px solid #ff6347; /* Underline the active link */
+  }
+  
+  .nav-links li a {
+    color: #000; /* Default link color */
+    text-decoration: none;
+    padding: 0.5rem;
+  }
+  
+  .nav-links li:hover a {
+    color: #ff6347; /* Hover color */
+  }
+  

@@ -1,11 +1,12 @@
 import React, { useState, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom"; // Import useLocation
 import "./Navbar.css";
 import { StoreContext } from "../../context/StoreContext";
 
 const Navbar = ({ setShowLogin }) => {
   const { token, logout } = useContext(StoreContext); // Assuming StoreContext manages token
   const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation(); // Get the current location
 
   const handleMenuToggle = () => {
     setMenuOpen(!menuOpen);
@@ -15,6 +16,9 @@ const Navbar = ({ setShowLogin }) => {
     setShowLogin(true);
     setMenuOpen(false);
   };
+
+  // Helper function to add "active" class based on the current path
+  const isActive = (path) => location.pathname === path ? "active" : "";
 
   return (
     <nav className="navbar">
@@ -27,22 +31,22 @@ const Navbar = ({ setShowLogin }) => {
 
       <div className={`navbar-center ${menuOpen ? "open" : ""}`}>
         <ul className="nav-links">
-          <li>
+          <li className={isActive("/events")}>
             <Link to="/events" onClick={() => setMenuOpen(false)}>
               Events
             </Link>
           </li>
-          <li>
+          <li className={isActive("/services")}>
             <Link to="/services" onClick={() => setMenuOpen(false)}>
               Services
             </Link>
           </li>
-          <li>
+          <li className={isActive("/about")}>
             <Link to="/about" onClick={() => setMenuOpen(false)}>
               About
             </Link>
           </li>
-          <li>
+          <li className={isActive("/contact")}>
             <Link to="/contact" onClick={() => setMenuOpen(false)}>
               Contact
             </Link>
