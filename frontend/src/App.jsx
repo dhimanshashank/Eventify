@@ -48,7 +48,7 @@ const App = () => {
 
         {/* WhatsApp Button */}
         <a
-          href="https://wa.me/8847680989"
+          href="https://wa.me/+918847680989"
           target="_blank"
           rel="noopener noreferrer"
           className="fixed bottom-10 right-12 bg-green-500 text-white rounded-full w-16 h-16 flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300"

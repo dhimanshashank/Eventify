@@ -54,8 +54,8 @@ const EventCategories = () => {
     },
     {
       id: 3,
-      image: '/assets/img/past events/collegeReunion.jpg',
-      title: 'Class of 2010 Reunion',
+      image: '/assets/img/past events/10threunion.jpg',
+      title: 'Class 10th Reunion',
       description: 'A school reunion filled with laughter, memories, and fun activities.',
     },
   ];
