@@ -5,7 +5,6 @@ import PartnersSection from '../components/Partners/PartnersSection'
 import OurTeam from '../components/Our Team/OurTeam'
 import Events from '../components/Events/Events'
 import WhyChooseUs from '../components/WhyChooseUs/WhyChooseUs'
-// import TestimonialSection from '../components/TestimonialSection/TestimonialSection'
 
 const Home = () => {
 
