@@ -41,6 +41,7 @@ const App = () => {
           <Route path="/events" element={<Events />} />
           <Route path="/services" element={<Services />} />
           <Route path="/about" element={<About />} />
+          {/* <Route path="/login" element={<Home />} /> */}
         </Routes>
 
         {/* Footer */}
