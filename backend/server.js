@@ -2,13 +2,9 @@ import express from "express";
 import cors from "cors";
 import { connectDB } from "./config/db.js";
 import userRoute from "./routes/userRoute.js";
-import passport from "passport";
 import session from "express-session";
 import dotenv from "dotenv";
 dotenv.config();
-
-// Import Passport config after dotenv so environment variables are available
-// import "./config/passport.js";  // Passport configuration (Google OAuth strategy)
 
 // Initialize Express app
 const app = express();
@@ -30,10 +26,6 @@ app.use(session({
     }
 }));
 
-// Initialize Passport middleware
-app.use(passport.initialize());
-app.use(passport.session());  // Persistent login sessions
-
 // Connect to the database
 connectDB();  // Your MongoDB connection
 
@@ -45,7 +37,7 @@ app.get("/", (req, res) => {
     res.send("API is running...");
 });
 
-// Error handling middleware (optional but recommended)
+// Error handling middleware
 app.use((err, req, res, next) => {
     console.error(err.stack);
     res.status(500).send({ message: "Something went wrong!" });
