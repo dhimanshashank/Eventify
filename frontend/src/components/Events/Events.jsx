@@ -12,7 +12,7 @@ const Events = () => {
       imageSrc: "/assets/img/coperate/coperate1.jpg",
       backgroundImage: "/assets/img/coperate/coperate-bg.jpg",
       buttonText: "Learn More",
-      buttonLink: "/corporate-events",
+      buttonLink: "/events",
     },
     {
       id: 2,
@@ -22,7 +22,7 @@ const Events = () => {
       imageSrc: "/assets/img/eventplanning/eventplanning.jpg",
       backgroundImage: "/assets/img/eventplanning/event-bg.jpg",
       buttonText: "Learn More",
-      buttonLink: "/event-planning",
+      buttonLink: "/events",
     },
     // Add more events here
   ];

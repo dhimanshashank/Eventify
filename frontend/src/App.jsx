@@ -52,7 +52,7 @@ const App = () => {
           href="https://wa.me/+918847680989"
           target="_blank"
           rel="noopener noreferrer"
-          className="fixed bottom-10 right-12 bg-green-500 text-white rounded-full w-16 h-16 flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300"
+          className="fixed bottom-10 right-12 bg-green-500 text-white rounded-full w-16 h-16 flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300 ease-in-out shadow-green-300/30 z-50 animate-pulse"
         >
           <i className="fab fa-whatsapp text-5xl"></i>
         </a>
