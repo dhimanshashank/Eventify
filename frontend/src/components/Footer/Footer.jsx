@@ -118,7 +118,7 @@ const Footer = () => {
           <address className="text-gray-700 not-italic mb-6 text-center lg:text-left">
             <p className="Urbanist mb-2">123 Event Street, Ludhiana, Punjab</p>
             <p className="Urbanist mb-2">Phone: +91 88476 80989</p>
-            <p className="Urbanist">Email: youreventify@google.com</p>
+            <p className="Urbanist">Email: youreventify@gmail.com</p>
           </address>
           
           {/* Social Icons */}

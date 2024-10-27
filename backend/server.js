@@ -6,6 +6,7 @@ import feedbackRoute from "./routes/feedbackRoute.js"; // New route for feedback
 import session from "express-session";
 import dotenv from "dotenv";
 import router from "./routes/feedbackRoute.js";
+import testimonialRoute from "./routes/testimonialRoute.js";
 dotenv.config();
 
 // Initialize Express app
@@ -41,6 +42,7 @@ connectDB(); // Your MongoDB connection
 // API Routes
 app.use("/api/users", userRoute); // User routes for authentication
 app.use("/api", router); // Feedback form route
+app.use("/api/", testimonialRoute); // Testimonial route for testimonials
 
 // Test route
 app.get("/", (req, res) => {
