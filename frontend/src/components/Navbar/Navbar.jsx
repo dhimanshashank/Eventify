@@ -36,11 +36,11 @@ const Navbar = ({ setShowLogin }) => {
               Events
             </Link>
           </li>
-          <li className={isActive("/services")}>
+          {/* <li className={isActive("/services")}>
             <Link to="/services" onClick={() => setMenuOpen(false)}>
               Services
             </Link>
-          </li>
+          </li> */}
           <li className={isActive("/about")}>
             <Link to="/about" onClick={() => setMenuOpen(false)}>
               About
