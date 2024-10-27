@@ -9,7 +9,9 @@ const Testimonial = () => {
   useEffect(() => {
     const fetchTestimonials = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/api/testimonials");
+        const response = await axios.get(
+          "https://eventify-7b8y.onrender.com/api/testimonials/api/testimonials"
+        );
         setTestimonials(response.data);
       } catch (error) {
         console.error("Error fetching testimonials:", error);
@@ -74,18 +76,30 @@ const Testimonial = () => {
                 {[...Array(5)].map((_, i) => (
                   <span
                     key={i}
-                    className={`text-lg Cinzel ${i < testimonial.rating ? 'text-yellow-500' : 'text-gray-300'}`}
+                    className={`text-lg Cinzel ${
+                      i < testimonial.rating
+                        ? "text-yellow-500"
+                        : "text-gray-300"
+                    }`}
                   >
                     ★
                   </span>
                 ))}
               </div>
-              <span className="text-gray-600 ml-2 Urbanist">Rating: <b>{testimonial.rating}</b></span>
-              <span className="ml-auto text-gray-500 text-sm Urbanist">{formatDate(testimonial.date)}</span>
+              <span className="text-gray-600 ml-2 Urbanist">
+                Rating: <b>{testimonial.rating}</b>
+              </span>
+              <span className="ml-auto text-gray-500 text-sm Urbanist">
+                {formatDate(testimonial.date)}
+              </span>
             </div>
             <hr className="mb-4" />
-            <h4 className="text-xl font-bolder text-gray-800 mb-2 ExpletusSans">{testimonial.role}</h4>
-            <p className="text-gray-600 mb-4 Urbanist text-justify md:font-normal">{testimonial.feedback}</p>
+            <h4 className="text-xl font-bolder text-gray-800 mb-2 ExpletusSans">
+              {testimonial.role}
+            </h4>
+            <p className="text-gray-600 mb-4 Urbanist text-justify md:font-normal">
+              {testimonial.feedback}
+            </p>
             <hr className="mb-4" />
             <div className="flex items-center text-gray-700 font-semibold Urbanist">
               <ProfileIcon /> {/* Profile icon */}
@@ -97,10 +111,13 @@ const Testimonial = () => {
 
       {/* New content between testimonials and form */}
       <div className="my-8 p-4 rounded-lg max-w-4xl mx-auto text-center">
-        <h3 className="text-3xl font-semibold text-gray-900 ExpletusSans mb-4">Want to Share Your Experience?</h3>
+        <h3 className="text-3xl font-semibold text-gray-900 ExpletusSans mb-4">
+          Want to Share Your Experience?
+        </h3>
         <p className="text-gray-600 mb-4 Urbanist text-center">
-          We value your feedback and would love to hear about your experience with our services.
-          Please click the button below to submit your testimonial!
+          We value your feedback and would love to hear about your experience
+          with our services. Please click the button below to submit your
+          testimonial!
         </p>
         <button
           onClick={handleFeedbackClick}

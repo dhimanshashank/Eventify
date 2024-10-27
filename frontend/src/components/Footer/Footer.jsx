@@ -5,7 +5,7 @@ const Footer = () => {
     name: "",
     email: "",
     phone: "",
-    eventDescription: ""
+    eventDescription: "",
   });
 
   const [submitStatus, setSubmitStatus] = useState(null);
@@ -13,29 +13,33 @@ const Footer = () => {
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     try {
-      const response = await fetch("http://localhost:4000/api/feedback", {  // Use the full backend URL
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(formData)
-      });
-  
+      const response = await fetch(
+        "https://eventify-7b8y.onrender.com/api/feedback",
+        {
+          // Use the full backend URL
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+
       if (response.ok) {
         setSubmitStatus("success");
         setFormData({
           name: "",
           email: "",
           phone: "",
-          eventDescription: ""
+          eventDescription: "",
         });
       } else {
         setSubmitStatus("error");
@@ -44,15 +48,15 @@ const Footer = () => {
       setSubmitStatus("error");
     }
   };
-  
 
   return (
     <footer className="bg-white pt-5 pb-0" id="contact">
       <div className="container mx-auto px-6 md:px-12 lg:px-20 flex flex-col lg:flex-row justify-between py-14">
-        
         {/* Contact Form Section */}
         <div className="lg:w-2/5 mb-12 lg:mb-0 contact-form">
-          <h2 className="text-4xl font-semibold text-gray-900 ExpletusSans">CONTACT US</h2>
+          <h2 className="text-4xl font-semibold text-gray-900 ExpletusSans">
+            CONTACT US
+          </h2>
           <p className="text-gray-700 mt-2 mb-6 Urbanist">
             Fill out the form below and we will be in contact shortly.
           </p>
@@ -101,8 +105,14 @@ const Footer = () => {
               SEND
             </button>
           </form>
-          {submitStatus === "success" && <p className="mt-4 text-green-600">Form submitted successfully!</p>}
-          {submitStatus === "error" && <p className="mt-4 text-red-600">There was an error submitting the form.</p>}
+          {submitStatus === "success" && (
+            <p className="mt-4 text-green-600">Form submitted successfully!</p>
+          )}
+          {submitStatus === "error" && (
+            <p className="mt-4 text-red-600">
+              There was an error submitting the form.
+            </p>
+          )}
         </div>
 
         {/* Logo and Social Links Section */}
@@ -113,14 +123,14 @@ const Footer = () => {
             alt="Eventify Logo"
             className="w-24 h-24 rounded-full mb-6 mt-8 lg:mt-0 md:w-32 md:h-32 lg:w-48 lg:h-48"
           />
-          
+
           {/* Address and Social Links */}
           <address className="text-gray-700 not-italic mb-6 text-center lg:text-left">
             <p className="Urbanist mb-2">123 Event Street, Ludhiana, Punjab</p>
             <p className="Urbanist mb-2">Phone: +91 88476 80989</p>
             <p className="Urbanist">Email: youreventify@gmail.com</p>
           </address>
-          
+
           {/* Social Icons */}
           <div className="social-icons flex space-x-4 mt-6">
             <a href="https://facebook.com" target="_blank" rel="noreferrer">

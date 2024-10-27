@@ -20,7 +20,10 @@ const TestimonialForm = () => {
     };
 
     try {
-      await axios.post("http://localhost:4000/api/testimonials", newTestimonial);
+      await axios.post(
+        "https://eventify-7b8y.onrender.com/api/testimonials",
+        newTestimonial
+      );
       toast.success("Thank you! Your review has been submitted.");
       // Reset form fields
       setFirstName("");
@@ -36,13 +39,21 @@ const TestimonialForm = () => {
 
   return (
     <div className="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-md mt-8">
-      <h2 className="text-3xl font-semibold text-gray-900 ExpletusSans">Write a Review</h2>
-      <p className="text-gray-600 mb-4 leading-relaxed mt-2 Urbanist">Click on star to review</p>
+      <h2 className="text-3xl font-semibold text-gray-900 ExpletusSans">
+        Write a Review
+      </h2>
+      <p className="text-gray-600 mb-4 leading-relaxed mt-2 Urbanist">
+        Click on star to review
+      </p>
       <div className="flex mb-4">
         {[1, 2, 3, 4, 5].map((star) => (
           <button
             key={star}
-            className={`text-2xl ${star <= rating ? "text-yellow-500 hover:text-yellow-600" : "text-gray-300 hover:text-gray-400"}`}
+            className={`text-2xl ${
+              star <= rating
+                ? "text-yellow-500 hover:text-yellow-600"
+                : "text-gray-300 hover:text-gray-400"
+            }`}
             onClick={() => setRating(star)}
           >
             ★
