@@ -1,5 +1,5 @@
-import { GoogleOAuthProvider } from '@react-oauth/google';
-import '@fortawesome/fontawesome-free/css/all.min.css';
+import { GoogleOAuthProvider } from "@react-oauth/google";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 import "./App.css";
 import React, { useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
@@ -16,14 +16,24 @@ import "react-toastify/dist/ReactToastify.css";
 const App = () => {
   const [showLogin, setShowLogin] = useState(false);
   const [isLogin, setIsLogin] = useState(true);
-  const [user, setUser] = useState(null);  // New state to track logged-in user
+  const [user, setUser] = useState(null);
+  const [loggedIn, setLoggedIn] = useState(false); // New state to track login status
   const location = useLocation();
+
+  const handleUserLogin = (userData) => {
+    setUser(userData); // Set the logged-in user data
+    setLoggedIn(true); // Update loggedIn state to true
+    setShowLogin(false); // Close the login/signup popup
+
+    // Store token in localStorage
+    localStorage.setItem("token", userData.token);
+  };
 
   return (
     <GoogleOAuthProvider clientId={import.meta.env.VITE_REACT_APP_GOOGLE_CLIENT_ID}>
       <div className="app relative">
         {/* Navbar */}
-        <Navbar setShowLogin={setShowLogin} user={user} setUser={setUser} />  {/* Passing user and setUser */}
+        <Navbar setShowLogin={setShowLogin} loggedIn={loggedIn} setLoggedIn={setLoggedIn} user={user} />
 
         {/* Login/Signup Popup */}
         {showLogin && (
@@ -31,7 +41,7 @@ const App = () => {
             setShowLogin={setShowLogin}
             isLogin={isLogin}
             setIsLogin={setIsLogin}
-            setUser={setUser}  // Pass setUser to LoginSignupPopup
+            onLogin={handleUserLogin} // Pass handleUserLogin function to update user and loggedIn state
           />
         )}
 
@@ -41,7 +51,6 @@ const App = () => {
           <Route path="/events" element={<Events />} />
           <Route path="/services" element={<Services />} />
           <Route path="/about" element={<About />} />
-          {/* <Route path="/login" element={<Home />} /> */}
         </Routes>
 
         {/* Footer */}
@@ -58,7 +67,17 @@ const App = () => {
         </a>
 
         {/* ToastContainer for notifications */}
-        <ToastContainer position="top-right" autoClose={3500} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover />
+        <ToastContainer
+          position="top-right"
+          autoClose={3500}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
       </div>
     </GoogleOAuthProvider>
   );
