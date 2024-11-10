@@ -13,6 +13,8 @@
     "@clerk/clerk-react": "^5.9.1",
     "@fortawesome/fontawesome-free": "^6.6.0",
     "@react-oauth/google": "^0.12.1",
+    "@stripe/react-stripe-js": "^2.8.1",
+    "@stripe/stripe-js": "^4.9.0",
     "aos": "^3.0.0-beta.6",
     "axios": "^1.7.7",
     "passport": "^0.7.0",
