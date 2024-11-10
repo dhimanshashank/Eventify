@@ -10,7 +10,7 @@ const Testimonial = () => {
     const fetchTestimonials = async () => {
       try {
         const response = await axios.get(
-          "https://eventify-7b8y.onrender.com/api/testimonials/api/testimonials"
+          "https://eventify-7b8y.onrender.com/api/testimonials"
         );
         setTestimonials(response.data);
       } catch (error) {
