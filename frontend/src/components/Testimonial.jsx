@@ -61,7 +61,7 @@ const Testimonial = () => {
   };
 
   return (
-    <section className="py-10 px-4">
+    <section className="py-10 bg-[#FDFDFC]">
       <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 pb-4 text-gray-800 ExpletusSans text-center w-full">
         What Our Clients Say
       </h2>
@@ -110,7 +110,7 @@ const Testimonial = () => {
       </div>
 
       {/* New content between testimonials and form */}
-      <div className="my-8 p-4 rounded-lg max-w-4xl mx-auto text-center">
+      <div className="my-8 p-4 pb-0 rounded-lg max-w-4xl mx-auto text-center">
         <h3 className="text-3xl font-semibold text-gray-900 ExpletusSans mb-4">
           Want to Share Your Experience?
         </h3>
@@ -119,17 +119,15 @@ const Testimonial = () => {
           with our services. Please click the button below to submit your
           testimonial!
         </p>
-        <button
-          onClick={handleFeedbackClick}
-          className="px-6 py-2 text-white bg-black rounded-lg hover:bg-gray-800 focus:ring-2 focus:ring-gray-500 Urbanist"
-        >
-          Submit Feedback
-        </button>
       </div>
 
       {/* Testimonial form with ref */}
       <div ref={formRef}>
         <TestimonialForm />
+      </div>
+
+      <div className="w-full pt-8">
+        <img src="/assets/img/eventplanning/eventplanningbg.jpg" alt="" className="w-full h-100 object-cover md:object-center"/>
       </div>
     </section>
   );

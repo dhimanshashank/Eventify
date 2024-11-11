@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./Navbar.css";  // You can keep this file for any additional styles if needed
+import { toast } from "react-toastify";
 
 const Navbar = ({ setShowLogin, loggedIn, setLoggedIn, user }) => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -25,6 +26,7 @@ const Navbar = ({ setShowLogin, loggedIn, setLoggedIn, user }) => {
 
   const confirmLogout = () => {
     localStorage.removeItem('token'); // Remove token from localStorage
+    toast.success("Logout successful");
     setLoggedIn(false); // Update loggedIn state to false
     setShowLogoutConfirmation(false); // Close confirmation dialog
   };
@@ -62,13 +64,6 @@ const Navbar = ({ setShowLogin, loggedIn, setLoggedIn, user }) => {
               Contact
             </Link>
           </li>
-          {/* {!loggedIn && (
-            <li>
-              <button onClick={handleAuthClick} className="login-signup-btn py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-600">
-                Login
-              </button>
-            </li>
-          )} */}
         </ul>
       </div>
 
@@ -84,8 +79,15 @@ const Navbar = ({ setShowLogin, loggedIn, setLoggedIn, user }) => {
               />
               {/* Profile Menu */}
               {showProfileMenu && (
-                <div className="absolute top-14 right-0 bg-white shadow-lg rounded-lg w-40 py-2">
-                  <button onClick={handleLogout} className="w-full text-left px-4 py-2 text-red-600 hover:bg-gray-100 rounded transition duration-300 ease-in-out Cinzel hover:text-red-600">
+                <div className="absolute top-18 right-0 bg-white shadow-lg rounded-xl z-10 border w-40">
+                  <Link
+                    to="/profile"
+                    onClick={() => setShowProfileMenu(false)} // Close profile menu after navigation
+                    className="block px-4 py-2 text-gray-900 hover:bg-gray-100 hover:bg-gray-200 rounded transition duration-300 ease-in-out Cinzel text-lg font-bold text-center hover:text-black"
+                  >
+                    Profile
+                  </Link>
+                  <button onClick={handleLogout} className="w-full text-center bg-red-100 px-4 py-2 text-red-600 hover:bg-red-200 rounded transition duration-300 ease-in-out Cinzel hover:text-red-600 text-lg">
                     Logout
                   </button>
                 </div>
@@ -109,11 +111,11 @@ const Navbar = ({ setShowLogin, loggedIn, setLoggedIn, user }) => {
       {showLogoutConfirmation && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white p-7 rounded-lg max-w-sm w-full text-center">
-            <p className="text-lg mb-4 text-gray-800 Urbanist">Are you sure you want to log out?</p>
-            <button onClick={confirmLogout} className="w-full py-2 bg-gray-900 text-white rounded hover:bg-gray-800 transition duration-300 mb-3 Cinzel">
+            <p className="text-xl mb-4 text-gray-800 Urbanist">Are you sure you want to log out?</p>
+            <button onClick={confirmLogout} className="w-full py-2 bg-gray-900 text-white rounded hover:bg-gray-800 transition duration-300 mb-3 Cinzel text-lg">
               Yes, Logout
             </button>
-            <button onClick={cancelLogout} className="w-full py-2 bg-gray-300 text-gray-700 rounded hover:bg-gray-400 transition duration-300 Cinzel">
+            <button onClick={cancelLogout} className="w-full py-2 bg-gray-300 text-gray-700 rounded hover:bg-gray-400 transition duration-300 Cinzel text-lg">
               Cancel
             </button>
           </div>

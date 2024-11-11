@@ -14,6 +14,15 @@ const LoginSignupPopup = ({ setShowLogin, isLogin, setIsLogin, onLogin, user, se
     setIsLogin(!isLogin);
   };
 
+  const confirmPassword = () => {
+    if (password !== confirmPassword) {
+      setError("Passwords do not match");
+      toast.error("Passwords do not match");
+      return false;
+    }
+    return true;
+  };
+
   const handleClose = () => {
     setShowLogin(false);
   };
@@ -118,10 +127,6 @@ const LoginSignupPopup = ({ setShowLogin, isLogin, setIsLogin, onLogin, user, se
   const isValidEmail = (email) => /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email);
   const isValidPhoneNumber = (phoneNumber) => /^[0-9]{10}$/.test(phoneNumber);
 
-  const handleLogout = () => {
-    setShowLogoutConfirmation(true); // Show confirmation dialog
-  };
-
   const confirmLogout = () => {
     // Clear user data and logout
     localStorage.removeItem("token");
@@ -131,21 +136,17 @@ const LoginSignupPopup = ({ setShowLogin, isLogin, setIsLogin, onLogin, user, se
     setShowProfileMenu(false); // Hide profile menu after logout
   };
 
-  const cancelLogout = () => {
-    setShowLogoutConfirmation(false); // Close confirmation dialog
-  };
-
   const toggleProfileMenu = () => {
     setShowProfileMenu(!showProfileMenu);
   };
 
   return (
-    <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-white p-8 rounded-lg w-full max-w-lg relative">
-        <button className="absolute top-2 right-2 text-xl" onClick={handleClose}>
+    <div className="fixed inset-0 bg-gray-900 bg-opacity-20 flex items-center justify-center z-10 mt-16">
+      <div className="bg-white p-8 rounded-xl w-full max-w-lg relative w-full max-w-md mx-auto">
+        <button className="absolute top-6 right-8 text-gray-600 text-2xl" onClick={handleClose}>
           &times;
         </button>
-        <h2 className="text-center text-2xl font-semibold mb-4">{isLogin ? "Login" : "Sign Up"}</h2>
+        <h2 className="text-center text-3xl font-bold mb-4 Cinzel">{isLogin ? "Login" : "Sign Up"}</h2>
 
         {error && <p className="text-red-500 text-center mb-4">{error}</p>}
 
@@ -156,7 +157,7 @@ const LoginSignupPopup = ({ setShowLogin, isLogin, setIsLogin, onLogin, user, se
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Email"
-              className="w-full p-3 mb-4 border border-gray-300 rounded"
+              className="w-full p-3 mb-4 border border-gray-300 rounded-lg focus:outline-black focus:border-black Urbanist"
               required
             />
             <input
@@ -164,10 +165,10 @@ const LoginSignupPopup = ({ setShowLogin, isLogin, setIsLogin, onLogin, user, se
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Password"
-              className="w-full p-3 mb-4 border border-gray-300 rounded"
+              className="w-full p-3 mb-4 border border-gray-300 rounded-lg focus:outline-black focus:border-black Urbanist"
               required
             />
-            <button type="submit" className="w-full py-3 bg-blue-500 text-white rounded hover:bg-blue-600">
+            <button type="submit" className="w-full py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-900 Cinzel text-2xl font-bold">
               Login
             </button>
           </form>
@@ -178,7 +179,7 @@ const LoginSignupPopup = ({ setShowLogin, isLogin, setIsLogin, onLogin, user, se
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               placeholder="Username"
-              className="w-full p-3 mb-4 border border-gray-300 rounded"
+              className="w-full p-3 mb-4 border border-gray-300 rounded-lg focus:outline-black focus:border-black Urbanist"
               required
             />
             <input
@@ -186,7 +187,7 @@ const LoginSignupPopup = ({ setShowLogin, isLogin, setIsLogin, onLogin, user, se
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Email"
-              className="w-full p-3 mb-4 border border-gray-300 rounded"
+              className="w-full p-3 mb-4 border border-gray-300 rounded-lg focus:outline-black focus:border-black Urbanist"
               required
             />
             <input
@@ -194,7 +195,15 @@ const LoginSignupPopup = ({ setShowLogin, isLogin, setIsLogin, onLogin, user, se
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Password"
-              className="w-full p-3 mb-4 border border-gray-300 rounded"
+              className="w-full p-3 mb-4 border border-gray-300 rounded-lg focus:outline-black focus:border-black Urbanist"
+              required
+            />
+            <input
+              type="password"
+              value={confirmPassword}
+              onChange={(e) => confirmPassword(e.target.value)}
+              placeholder="Confirm Password"
+              className="w-full p-3 mb-4 border border-gray-300 rounded-lg focus:outline-black focus:border-black Urbanist"
               required
             />
             <input
@@ -202,16 +211,16 @@ const LoginSignupPopup = ({ setShowLogin, isLogin, setIsLogin, onLogin, user, se
               value={phoneNumber}
               onChange={(e) => setPhoneNumber(e.target.value)}
               placeholder="Phone Number"
-              className="w-full p-3 mb-4 border border-gray-300 rounded"
+              className="w-full p-3 mb-4 border border-gray-300 rounded-lg focus:outline-black focus:border-black Urbanist"
               required
             />
-            <button type="submit" className="w-full py-3 bg-green-500 text-white rounded hover:bg-green-600">
+            <button type="submit" className="w-full py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-900 Cinzel text-2xl font-bold">
               Sign Up
             </button>
           </form>
         )}
 
-        <button onClick={handleToggleView} className="w-full mt-4 text-center text-sm text-blue-500">
+        <button onClick={handleToggleView} className="w-full mt-4 text-center text-md text-gray-600">
           {isLogin ? "Don't have an account? Sign up" : "Already have an account? Log in"}
         </button>
       </div>
@@ -223,46 +232,7 @@ const LoginSignupPopup = ({ setShowLogin, isLogin, setIsLogin, onLogin, user, se
 
           {/* Profile Button */}
           <div onClick={toggleProfileMenu} className="cursor-pointer py-2 px-4 bg-blue-500 text-white rounded-full flex items-center justify-center hover:bg-blue-600">
-            <img src="https://via.placeholder.com/40" alt="Profile" className="rounded-full" />
-          </div>
-
-          {/* Profile Menu */}
-          {showProfileMenu && (
-            <div className="bg-white shadow-lg p-4 mt-2 rounded w-full">
-              <button
-                onClick={() => {}}
-                className="w-full text-left py-2 text-blue-600"
-              >
-                My Profile
-              </button>
-              <button
-                onClick={handleLogout}
-                className="w-full text-left py-2 text-red-600"
-              >
-                Logout
-              </button>
-            </div>
-          )}
-        </div>
-      )}
-
-      {/* Logout Confirmation Dialog */}
-      {showLogoutConfirmation && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-10">
-          <div className="bg-white p-6 rounded-lg max-w-sm text-center">
-            <p className="text-lg mb-4 Urbanist">Are you sure you want to logout?</p>
-            <button
-              onClick={confirmLogout}
-              className="w-full py-2 bg-green-500 text-white rounded hover:bg-green-600 mb-2"
-            >
-              Yes, Logout
-            </button>
-            <button
-              onClick={cancelLogout}
-              className="w-full py-2 bg-gray-300 text-gray-700 rounded hover:bg-gray-400"
-            >
-              Cancel
-            </button>
+            <img src="../../public/img/profileImage.png" alt="Profile" className="rounded-full" />
           </div>
         </div>
       )}
