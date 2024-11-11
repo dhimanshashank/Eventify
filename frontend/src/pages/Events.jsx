@@ -8,17 +8,18 @@ const Events = ({ setShowLogin, loggedIn }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const upcomingEvents = [
-    { id: 4, image: '/assets/img/events/event4.jpg', date: '25th September 2024', price: '799', title: 'WEDNESDAY NIGHT' },
-    { id: 3, image: '/assets/img/events/event3.jpg', date: '20th October 2024', price: '1499', title: 'Diwali Parties' },
-    { id: 1, image: '/assets/img/events/event1.jpg', date: '9th November 2024', price: '1199', title: 'SPACE TECH' },
-    { id: 2, image: '/assets/img/events/event2.jpg', date: '24th December 2024', price: '999', title: 'Christmas EVE' },
+    { id: 4, image: '/assets/img/events/event4.jpg', date: '25th September 2024', price: '799', title: 'WEDNESDAY NIGHT', paymentLink: 'https://buy.stripe.com/test_6oEbIJ5Gg7rO1c4288' },
+    { id: 3, image: '/assets/img/events/event3.jpg', date: '20th October 2024', price: '1499', title: 'Diwali Parties', paymentLink: 'https://buy.stripe.com/test_bIY6op1q0bI4080289' },
+    { id: 1, image: '/assets/img/events/event1.jpg', date: '9th November 2024', price: '1199', title: 'SPACE TECH', paymentLink: 'https://buy.stripe.com/test_3cscMN5Gg7rOg6YeUW' },
+    { id: 2, image: '/assets/img/events/event2.jpg', date: '24th December 2024', price: '999', title: 'Christmas EVE', paymentLink: 'https://buy.stripe.com/test_cN24ghecMaE05skdQT' },
   ];
 
-  const handleJoinNowClick = (eventPrice) => {
+  const handleJoinNowClick = (event) => {
     if (!loggedIn) {
       setShowLogin(true); // Show login popup if user is not logged in
     } else {
-      navigate('/payment', { state: { amount: eventPrice } }); // Navigate to payment if user is logged in
+      // Redirect to the payment link if the user is logged in
+      window.open(event.paymentLink, '_blank');
     }
   };
 
@@ -73,7 +74,7 @@ const Events = ({ setShowLogin, loggedIn }) => {
                   <p className="text-gray-800 font-bold text-md md:text-lg Urbanist">₹{event.price}</p>
                 </div>
                 <button
-                  onClick={() => handleJoinNowClick(event.price)}
+                  onClick={() => handleJoinNowClick(event)}
                   className="bg-gray-800 text-white px-4 py-2 rounded-md hover:bg-black transition-colors duration-300 w-full mt-4 Cinzel font-semibold text-md"
                 >
                   Join Now

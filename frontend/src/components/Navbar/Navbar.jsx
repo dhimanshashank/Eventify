@@ -39,12 +39,12 @@ const Navbar = ({ setShowLogin, loggedIn, setLoggedIn, user }) => {
   const isActive = (path) => (location.pathname === path ? "active" : "");
 
   return (
-    <nav className="navbar flex p-4 bg-gray-800 text-white">
-      <div className="navbar-left flex flex-col justify-center items-center md:flex-row">
+    <nav className="navbar flex py-4 bg-gray-800 text-white">
+      <div className="navbar-left flex flex-col items-center">
         <h1 className="text-2xl font-bold md:text-3xl md:mr-4 Cinzel">
           <Link to="/">EVENTIFY</Link>
         </h1>
-        <p className="text-sm font-semibold text-gray-400 md:text-lg">Events and Design</p>
+        <p className="text-xl font-bold text-gray-800 md:text-lg Urbanist md:mr-4">Events and Design</p>
       </div>
 
       <div className={`navbar-center ${menuOpen ? "block" : "hidden"} md:block`}>
