@@ -39,10 +39,10 @@ const registerUser = async (req, res) => {
     console.log(req.body)
     try {
         // Check if user already exists
-        // const exists = await userModel.findOne({ email });
-        // if (exists) {
-        //     return res.status(400).json({ success: false, message: "User already exists" });
-        // }
+        const exists = await userModel.findOne({ email });
+        if (exists) {
+            return res.status(400).json({ success: false, message: "User already exists" });
+        }
 
         // Validate email and password
         if (!validator.isEmail(email)) {
@@ -61,7 +61,7 @@ const registerUser = async (req, res) => {
             name, 
             email, 
             password: hashedPassword, 
-            phone // Optional phone number
+            phone
         });
         
         await newUser.save();
@@ -76,8 +76,51 @@ const registerUser = async (req, res) => {
     }
 }
 
+// Generate JWT token
 const createToken = (id) => {
     return jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: "3d" });
 }
 
-export { loginUser, registerUser };
+// Fetch User Profile
+export const getUserProfile = async (req, res) => {
+    try {
+      const user = await userModel.findById(req.user._id).select('-password');
+      if (user) {
+        res.json({
+          username: user.name,
+          email: user.email,
+          phoneNumber: user.phone,
+        });
+      } else {
+        res.status(404).json({ message: 'User not found' });
+      }
+    } catch (error) {
+      res.status(500).json({ error: error.message });
+    }
+  };
+  
+  // Update User Profile
+  export const updateUserProfile = async (req, res) => {
+    const { username, email, phoneNumber } = req.body;
+    try {
+      const user = await userModel.findById(req.user._id);
+      if (user) {
+        user.name = username || user.name;
+        user.email = email || user.email;
+        user.phone = phoneNumber || user.phone;
+  
+        const updatedUser = await user.save();
+        res.json({
+          username: updatedUser.name,
+          email: updatedUser.email,
+          phoneNumber: updatedUser.phone,
+        });
+      } else {
+        res.status(404).json({ message: 'User not found' });
+      }
+    } catch (error) {
+      res.status(500).json({ error: error.message });
+    }
+  };
+
+export { loginUser, registerUser, getUserProfile, updateUserProfile };
