@@ -10,6 +10,7 @@ import Footer from "./components/Footer/Footer";
 import Events from "./pages/Events";
 import Services from "./pages/Services";
 import About from "./pages/AboutUs";
+import Profile from "./pages/Profile";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -51,7 +52,7 @@ const App = () => {
           <Route path="/events" element={<Events setShowLogin={setShowLogin} loggedIn={loggedIn}/>} />
           <Route path="/services" element={<Services />} />
           <Route path="/about" element={<About />} />
-          {/* <Route path="/payment" element={<PaymentFormWrapper />} /> */}
+          <Route path="/profile" element={<Profile />} />
         </Routes>
 
         {/* Footer */}
