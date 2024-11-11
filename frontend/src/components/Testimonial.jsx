@@ -61,7 +61,7 @@ const Testimonial = () => {
   };
 
   return (
-    <section className="py-10 px-4 bg-[#FDFDFC]">
+    <section className="py-10 bg-[#FDFDFC]">
       <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 pb-4 text-gray-800 ExpletusSans text-center w-full">
         What Our Clients Say
       </h2>
@@ -127,7 +127,7 @@ const Testimonial = () => {
       </div>
 
       <div className="w-full pt-8">
-        <img src="../../public/assets/img/eventplanning/eventplanningbg.jpg" alt="" className="w-full h-100 object-cover md:object-center"/>
+        <img src="/assets/img/eventplanning/eventplanningbg.jpg" alt="" className="w-full h-100 object-cover md:object-center"/>
       </div>
     </section>
   );
