@@ -10,8 +10,10 @@ import Footer from "./components/Footer/Footer";
 import Events from "./pages/Events";
 import Services from "./pages/Services";
 import About from "./pages/AboutUs";
+import PaymentForm from "./components/PaymentForm";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import PaymentFormWrapper from "./components/PaymentForm";
 
 const App = () => {
   const [showLogin, setShowLogin] = useState(false);
@@ -48,9 +50,10 @@ const App = () => {
         {/* Main Routes */}
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home />} />
-          <Route path="/events" element={<Events />} />
+          <Route path="/events" element={<Events setShowLogin={setShowLogin} loggedIn={loggedIn}/>} />
           <Route path="/services" element={<Services />} />
           <Route path="/about" element={<About />} />
+          <Route path="/payment" element={<PaymentFormWrapper />} />
         </Routes>
 
         {/* Footer */}
