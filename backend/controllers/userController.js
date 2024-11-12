@@ -82,7 +82,7 @@ const createToken = (id) => {
 }
 
 // Fetch User Profile
-export const getUserProfile = async (req, res) => {
+const getUserProfile = async (req, res) => {
     try {
       const user = await userModel.findById(req.user._id).select('-password');
       if (user) {
@@ -100,7 +100,7 @@ export const getUserProfile = async (req, res) => {
   };
   
   // Update User Profile
-  export const updateUserProfile = async (req, res) => {
+const updateUserProfile = async (req, res) => {
     const { username, email, phoneNumber } = req.body;
     try {
       const user = await userModel.findById(req.user._id);

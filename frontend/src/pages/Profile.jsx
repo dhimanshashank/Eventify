@@ -9,13 +9,25 @@ const Profile = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Fetch user data
     const fetchUserProfile = async () => {
       try {
-        const response = await axios.get("https://eventify-7b8y.onrender.com/api/profile", {
-          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+        const token = localStorage.getItem("token");
+        if (!token) {
+          toast.error("User not authenticated. Please log in again.");
+          return;
+        }
+
+        const response = await axios.get("https://eventify-7b8y.onrender.com/api/users/profile", {
+          headers: { Authorization: `Bearer ${token}` }
         });
-        setUserData(response.data);
+
+        if (response.data) {
+          setUserData({
+            username: response.data.username,
+            email: response.data.email,
+            phoneNumber: response.data.phoneNumber
+          });
+        }
       } catch (error) {
         toast.error("Failed to load profile data");
       } finally {
@@ -33,10 +45,16 @@ const Profile = () => {
   const handleUpdateProfile = async (e) => {
     e.preventDefault();
     try {
+      const token = localStorage.getItem("token");
+      if (!token) {
+        toast.error("User not authenticated. Please log in again.");
+        return;
+      }
+
       await axios.put(
-        "https://eventify-7b8y.onrender.com/api/profile",
+        "https://eventify-7b8y.onrender.com/api/users/profile",
         { ...userData },
-        { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }
+        { headers: { Authorization: `Bearer ${token}` } }
       );
       toast.success("Profile updated successfully");
     } catch (error) {
