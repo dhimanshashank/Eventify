@@ -8,7 +8,7 @@ const OurTeam = () => {
         {/* Image Section */}
         <div className="lg:w-1/2 w-full flex justify-center">
           <img
-            // src={require("../path_to_image_directory/image.png")} // replace with the actual image path
+            src={"/assets/img/aboutus/our-team.jpg"} // replace with the actual image path
             alt="Our Team"
             className="rounded-lg shadow-lg max-w-full h-auto"
           />
