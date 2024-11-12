@@ -33,7 +33,7 @@ const LoginSignupPopup = ({ setShowLogin, isLogin, setIsLogin, onLogin, user, se
 
     try {
       const response = await fetch(
-        `https://eventify-7b8y.onrender.com/api/users/login`,
+        `http://localhost:4000/api/users/login`,
         {
           method: "POST",
           headers: {
@@ -50,6 +50,7 @@ const LoginSignupPopup = ({ setShowLogin, isLogin, setIsLogin, onLogin, user, se
 
       if (response.ok) {
         toast.success("Login successful!");
+        console.log(data);
         onLogin(data); // Update the global state with user data
         setShowLogin(false);
       } else {
@@ -93,17 +94,17 @@ const LoginSignupPopup = ({ setShowLogin, isLogin, setIsLogin, onLogin, user, se
 
     try {
       const response = await fetch(
-        `https://eventify-7b8y.onrender.com/api/users/register`,
+        `http://localhost:4000/api/users/register`,
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            username,
+            name: username,
             email,
             password,
-            phoneNumber,
+            phone: phoneNumber,
           }),
         }
       );
@@ -198,14 +199,14 @@ const LoginSignupPopup = ({ setShowLogin, isLogin, setIsLogin, onLogin, user, se
               className="w-full p-3 mb-4 border border-gray-300 rounded-lg focus:outline-black focus:border-black Urbanist"
               required
             />
-            <input
+            {/* <input
               type="password"
               value={confirmPassword}
               onChange={(e) => confirmPassword(e.target.value)}
               placeholder="Confirm Password"
               className="w-full p-3 mb-4 border border-gray-300 rounded-lg focus:outline-black focus:border-black Urbanist"
               required
-            />
+            /> */}
             <input
               type="text"
               value={phoneNumber}

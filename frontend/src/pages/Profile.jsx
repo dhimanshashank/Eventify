@@ -67,42 +67,42 @@ const Profile = () => {
   }
 
   return (
-    <div className="max-w-md mx-auto mt-8 p-6 bg-white rounded-lg shadow-md border">
-      <h2 className="text-2xl font-bold mb-6 text-gray-800 text-center">Profile</h2>
+    <div className="max-w-md mx-auto m-8 p-6 bg-white rounded-lg shadow-md border border-gray-200">
+      <h2 className="text-2xl font-bold mb-6 text-gray-800 text-center Cinzel text-3xl">Profile</h2>
       <form onSubmit={handleUpdateProfile}>
         <div className="mb-4">
-          <label className="block text-gray-700 font-bold mb-2">Username</label>
+          <label className="block text-gray-700 font-bold mb-2 Urbanist">Username</label>
           <input
             type="text"
             name="username"
             value={userData.username}
             onChange={handleInputChange}
-            className="w-full p-2 border rounded-lg"
+            className="w-full p-2 border rounded-lg Urbanist"
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 font-bold mb-2">Email</label>
+          <label className="block text-gray-700 font-bold mb-2 Urbanist">Email</label>
           <input
             type="email"
             name="email"
             value={userData.email}
             onChange={handleInputChange}
-            className="w-full p-2 border rounded-lg"
+            className="w-full p-2 border rounded-lg Urbanist"
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 font-bold mb-2">Phone Number</label>
+          <label className="block text-gray-700 font-bold mb-2 Urbanist">Phone Number</label>
           <input
             type="tel"
             name="phoneNumber"
             value={userData.phoneNumber}
             onChange={handleInputChange}
-            className="w-full p-2 border rounded-lg"
+            className="w-full p-2 border rounded-lg Urbanist"
           />
         </div>
         <button
           type="submit"
-          className="w-full py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition duration-300"
+          className="w-full py-3 bg-gray-800 text-white font-semibold rounded-lg hover:bg-gray-900 transition duration-300 Cinzel text-lg"
         >
           Update Profile
         </button>

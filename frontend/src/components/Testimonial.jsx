@@ -61,11 +61,11 @@ const Testimonial = () => {
   };
 
   return (
-    <section className="py-10 bg-[#FDFDFC]">
+    <section className="py-10 bg-[#FDFDFC] md:py-20 lg:py-24 md:mb-12">
       <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 pb-4 text-gray-800 ExpletusSans text-center w-full">
         What Our Clients Say
       </h2>
-      <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+      <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto md:gap-8">
         {testimonials.map((testimonial) => (
           <div
             key={testimonial._id}

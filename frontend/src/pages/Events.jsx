@@ -34,14 +34,14 @@ const Events = ({ setShowLogin, loggedIn }) => {
 
   return (
     <div className="flex flex-col items-center justify-center">
-      <div className="relative w-full h-72 md:h-96 mb-8">
+      <div className="relative w-full h-64 mb-8">
         <img
           src="/assets/img/eventplanning/eventplanning4.jpg"
           alt="About Us Hero"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 flex items-center justify-center text-white">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-wider Cinzel">EVENTS</h1>
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bolder tracking-wider Cinzel ">EVENTS</h1>
         </div>
       </div>
 
