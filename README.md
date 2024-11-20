@@ -62,12 +62,104 @@ Eventify is a cutting-edge platform designed to streamline and personalize event
 ---
 
 ## 📸 Screenshots
-1. Home Page
+1. Home Page: 
 A visually stunning homepage with details on why customers should choose Eventify.
+
 ![Description of Image](./Screenshots/Home.png)
 
 ---
 
-2. About Us
+2. About Us: 
 A warm and personalized page explaining the mission and vision of Eventify.
+
 ![Description of Image](./Screenshots/About.png)
+
+---
+
+3. Login Page: 
+A user-friendly login page to have a proper user registration and user login page.
+
+![Description of Image](./Screenshots/Login.png)
+
+---
+
+4. Events Page:
+A proper page dedicated to events which would be organized by us.
+
+![Description of Image](./Screenshots/Events.png)
+
+---
+
+5. Testimonial Page:
+A testimonial page for proper user review section which has a connectivity with the database and user can directly add on their reviews.
+
+![Description of Image](./Screenshots/Testimonial.png)
+
+---
+
+## ⚙️ Installation & Setup
+
+### 1. **Clone the Repository**
+
+```bash
+git clone https://github.com/dhimanshashank/eventify.git
+```
+
+### 2. Backend Setup 
+- Navigate to the backend folder:
+
+```bash
+cd backend
+```
+
+- Install the backend dependency
+```bash
+npm install
+```
+
+- Create a .env file in the backend directory and configure the following:
+env
+```bash
+PORT=4000
+MONGO_URI=<Your MongoDB Connection String>
+```
+
+- Start the backend server:
+```bash
+npm start
+```
+
+### 3. Frontend Setup
+- Navigate to the frontend folder:
+```bash
+cd ../frontend
+```
+
+- Install dependencies:
+```bash
+npm install
+```
+
+- Start the React development server:
+```bash
+npm start
+```
+
+### 4. Database Setup
+- Ensure you have a MongoDB database running.
+- Use the MongoDB connection string in the MONGO_URI field of your .env file to connect your backend to the database.
+
+---
+
+## 📈 Future Enhancements
+- Add advanced search and filter options for events.
+- Implement event reminder notifications via email/SMS.
+
+---
+
+## 🤝 Contribution Guidelines
+We welcome contributions from the community! To contribute:
+
+- Fork the repository.
+- Create a new branch for your feature/bugfix.
+- Submit a pull request for review.
