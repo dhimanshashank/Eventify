@@ -2,7 +2,7 @@
 
 Eventify is a cutting-edge platform designed to streamline and personalize event management. Whether it's a birthday party, reunions, anniversary parties, or other personal events, Eventify helps users plan, organize, and execute events with ease. With its modern design and user-friendly interface, Eventify bridges the gap between event organizers and clients by offering real-time communication, and secure payment integrations.
 
-![Description of Image](Eventify.png)
+![Description of Image](EventifyPoster.png)
 
 ---
 
