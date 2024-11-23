@@ -63,7 +63,7 @@ const Profile = () => {
   };
 
   if (isLoading) {
-    return <div className="flex justify-center items-center h-screen">Loading...</div>;
+    return <div className="flex justify-center items-center h-screen text-2xl font-bold text-gray-800 Cinzel">Loading...</div>;
   }
 
   return (
