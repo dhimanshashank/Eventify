@@ -4,7 +4,7 @@ import "./App.css";
 import React, { useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
-import LoginSignupPopup from "./components/LoginSignUpPopUp/LoginSignupPopup";
+import LoginSignupPopup from "./components/LoginSignupPopup/LoginSignupPopup";
 import Home from "./pages/Home";
 import Footer from "./components/Footer/Footer";
 import Events from "./pages/Events";
