@@ -16,11 +16,17 @@ const port = process.env.PORT || 4000; // Port from environment or fallback to 4
 
 // Middleware
 app.use(express.json()); // Parse incoming JSON requests
-app.use(cors()); // Enable CORS for all routes
-app.use(cors({
-  origin: "http://localhost:5173", // Allow frontend URL
-  credentials: true, // Enable credentials (optional)
-}));
+const allowedOrigins = [
+  "http://localhost:5173",  // For local development
+  "https://eventify-gamma-eight.vercel.app" // For production
+];
+
+app.use(
+  cors({
+    origin: allowedOrigins,
+    credentials: true, // If your frontend needs credentials like cookies
+  })
+);
 
 
 // Session middleware for handling session cookies
