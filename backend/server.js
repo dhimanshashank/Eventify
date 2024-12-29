@@ -8,6 +8,7 @@ import dotenv from "dotenv";
 import router from "./routes/feedbackRoute.js";
 import testimonialRoute from "./routes/testimonialRoute.js";
 import paymentRoute from "./routes/paymentRoute.js";
+
 dotenv.config();
 
 // Initialize Express app
@@ -16,18 +17,26 @@ const port = process.env.PORT || 4000; // Port from environment or fallback to 4
 
 // Middleware
 app.use(express.json()); // Parse incoming JSON requests
+
+// CORS Configuration
 const allowedOrigins = [
   "http://localhost:5173",  // For local development
-  "https://eventify-gamma-eight.vercel.app" // For production
+  "https://eventify-gamma-eight.vercel.app", // Production
+  "https://eventify-hk2k7n983-shashanks-projects-4fce7329.vercel.app", // Ensure this is added
 ];
 
 app.use(
   cors({
-    origin: allowedOrigins,
-    credentials: true, // If your frontend needs credentials like cookies
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true, // Allows cookies and authorization headers
   })
 );
-
 
 // Session middleware for handling session cookies
 app.use(
@@ -60,6 +69,9 @@ app.get("/", (req, res) => {
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error(err.stack);
+  if (err.message === "Not allowed by CORS") {
+    return res.status(403).json({ message: "CORS Error: Access denied" });
+  }
   res.status(500).send({ message: "Something went wrong!" });
 });
 
