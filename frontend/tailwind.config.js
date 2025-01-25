@@ -1,5 +1,7 @@
-/** @type {import('tailwindcss').Config} */
-export const content = ["./src/**/*.{html,js}"];
+export const content = [
+  "./src/**/*.{html,js,jsx,ts,tsx}", // Adjust based on your project structure
+  "./public/index.html",
+];
 export const theme = {
   extend: {},
 };
